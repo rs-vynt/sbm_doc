@@ -1,0 +1,272 @@
+PHẦN 0: MỐI QUAN HỆ HỢP TÁC (ƯU TIÊN THẢO LUẬN ĐẦU TIÊN)
+===========================================================
+
+0.1. Các mô hình hợp tác đề xuất (để thảo luận với khách)
+    
+    OPTION 1: PROJECT-BASED MODEL (Như Phase1)
+    ────────────────────────────────────────────
+    Scope:
+    - Chỉ làm các dự án SBM (Phase2, Phase3, ...)
+    - Mỗi project có scope, budget, timeline rõ ràng
+    - Thanh toán theo milestone hoặc completion
+    
+    Structure:
+    - Fixed cost + bonus (như Phase1)
+    - Hoặc milestone-based pricing
+    - Kết thúc khi project hoàn thành
+    - Flexible schedule và timeline
+    
+    Ưu điểm:
+    ✓ Rõ ràng về scope và budget
+    ✓ Dễ quản lý từng project
+    ✓ Flexible - có thể chọn làm hay không
+    ✓ Phù hợp nếu chỉ focus vào SBM
+    ✓ Timeline có thể linh hoạt theo nhu cầu
+    
+    Nhược điểm:
+    ✗ Có thể có communication gaps giữa các project
+    ✗ Không có commitment lâu dài
+    ✗ Có thể thiếu continuity
+    
+    Phù hợp khi:
+    - Chỉ làm SBM projects
+    - Budget cố định cho từng phase
+    - Timeline flexible, không quá gấp
+    
+    
+    OPTION 2: RETAINER/PARTNERSHIP MODEL
+    ─────────────────────────────────────
+    Scope:
+    - SBM development và maintenance
+    - Có thể làm thêm các dự án khác của LSMK (nếu có)
+    - Priority support và ongoing development
+    
+    Structure:
+    - Monthly retainer fee (base commitment)
+    - Project fees cho features lớn/Phase2
+    - Vietnam Team như "extended development team" của LSMK
+    - Guaranteed minimum hours trong retainer
+    - Flexible schedule
+    
+    Ưu điểm:
+    ✓ Commitment lâu dài, ổn định
+    ✓ Communication tốt hơn (regular sync)
+    ✓ Priority support, faster response
+    ✓ Better understanding về product và business
+    ✓ Có thể làm nhiều dự án LSMK (không chỉ SBM)
+    ✓ Flexible scaling
+    ✓ Stable income cho Vietnam Team
+    
+    Nhược điểm:
+    ✗ Chi phí cố định hàng tháng
+    ✗ Cần commitment từ cả hai bên
+    
+    Phù hợp khi:
+    - Long-term collaboration
+    - Cần support thường xuyên
+    - Có nhiều dự án LSMK (SBM + others)
+    - Muốn có "technical partner"
+    
+    
+    OPTION 3: BUILD VIETNAM TEAM/COMPANY MODEL (Future Option)
+    ───────────────────────────────────────────────────────────
+    Scope:
+    - Vietnam Team/Company chính thức của LSMK tại Việt Nam
+    - Làm tất cả dự án LSMK (SBM + các dự án khác)
+    - Có thể nhận outsource projects từ các công ty khác (với approval của LSMK)
+    - Scale up team khi cần
+    
+    Structure:
+    - LSMK có thể đầu tư/thành lập company tại VN
+    - Hoặc partnership agreement với Vietnam Team
+    - Fixed monthly budget hoặc revenue sharing
+    - Team có thể làm multiple projects
+    
+    Lưu ý quan trọng:
+    ⚠️ Option này yêu cầu Vietnam Team chuyển sang full-time commitment cho LSMK
+    ⚠️ Cần thảo luận về transition plan
+    ⚠️ Có thể là long-term goal, không phải immediate option
+    
+    Ưu điểm:
+    ✓ Official presence tại Việt Nam
+    ✓ Có thể scale team lớn hơn
+    ✓ Làm nhiều dự án (LSMK + outsource)
+    ✓ Revenue potential cao hơn
+    ✓ Professional setup, có thể attract talent tốt
+    ✓ Long-term strategic partnership
+    ✓ Full-time commitment = faster delivery
+    
+    Nhược điểm:
+    ✗ Cần investment ban đầu
+    ✗ Phức tạp hơn về legal và structure
+    ✗ Cần quản lý nhiều projects
+    ✗ Vietnam Team cần quit công việc full-time hiện tại
+    ✗ Higher risk cho cả hai bên
+    
+    Phù hợp khi:
+    - LSMK muốn expand tại Việt Nam
+    - Có nhiều dự án và plans
+    - Muốn build long-term presence
+    - Vietnam Team sẵn sàng chuyển sang full-time
+    - Có thể outsource cho companies khác (gợi ý nhẹ)
+    
+    Gợi ý nhẹ về outsource:
+    - Vietnam Team có thể nhận projects từ companies khác
+    - LSMK có thể có revenue share hoặc không
+    - Đảm bảo không conflict với LSMK projects
+    - Win-win: LSMK có team ổn định, Vietnam Team có thêm revenue
+    
+    Transition Plan (nếu chọn option này):
+    - Phase 1: Retainer model như Option 2 (6-12 tháng)
+    - Phase 2: Tăng commitment dần (nếu cả hai bên hài lòng)
+    - Phase 3: Chuyển sang full-time commitment khi ready
+
+0.2. Questions quan trọng để hỏi khách hàng (trước khi đề xuất option)
+    
+    Về Scope:
+    □ LSMK chỉ muốn làm SBM hay có các dự án khác?
+    □ Có kế hoạch phát triển thêm products/services không?
+    □ Có muốn Vietnam Team làm nhiều dự án LSMK không?
+    
+    Về Mối quan hệ:
+    □ Short-term (project-based) hay long-term partnership?
+    □ Có muốn build team/company tại Việt Nam không?
+    □ Có quan tâm đến việc scale team lớn hơn không?
+    
+    Về Timeline & Availability:
+    □ Timeline expectations? (Có flexible không hay cần urgent delivery?)
+    □ Preferred working hours/schedule? (Time zone VN vs KR)
+    □ Có cần full-time commitment không? (Nếu có, cần thảo luận transition)
+    
+    Về Budget & Structure:
+    □ Budget expectation cho Phase2?
+    □ Có sẵn sàng monthly retainer không?
+    □ Preferred payment structure?
+    
+    Về Future Plans:
+    □ Có plans mở rộng business tại Việt Nam không?
+    □ Có quan tâm đến outsource opportunities không?
+    □ Vision cho Vietnam Team trong 1-2 năm tới?
+    □ Có muốn Vietnam Team chuyển sang full-time commitment không? (Long-term)
+
+0.3. Các điểm cần làm rõ (sau khi chọn option)
+    
+    a. Time Commitment & Availability
+       - Working hours: Khi nào available? (Flexible schedule)
+       - Time zone: VN vs KR (1 hour difference)
+       - Urgent requests: Response time expectations?
+       - Peak periods: Có thể tăng commitment không? (Với thỏa thuận)
+       - Holidays: VN và KR holidays - làm rõ schedule
+    
+    b. Communication Framework
+       - Frequency: Weekly sync? Bi-weekly?
+       - Timing: Khi nào phù hợp? (Flexible schedule)
+       - Channels: Email, WhatsApp, Video call?
+       - Escalation process: Khi nào cần urgent discussion?
+       - Decision-making: Ai quyết định gì? Process như nào?
+    
+    c. Scope & Expectations
+       - Maintenance & Support: Included hay separate?
+       - Bug fixes: Response time expectations?
+       - New features: How to prioritize?
+       - Technical decisions: Who has final say?
+       - Timeline: Flexible để đảm bảo quality
+       - (Nếu Option 3) Outsource projects: Approval process?
+    
+    d. Payment Structure
+       - Phase2: Project-based hay retainer?
+       - Ongoing maintenance: Monthly fee?
+       - Payment terms: Milestone-based? Monthly?
+       - Currency: USD? KRW?
+       - (Nếu Option 3) Revenue sharing model?
+    
+    e. Long-term Commitment
+       - Duration: 6 months? 12 months? Open-ended?
+       - Renewal process: Auto-renew hay renegotiate?
+       - Exit clause: Notice period?
+    
+    f. Intellectual Property & Rights
+       - Code ownership: Rõ ràng theo hợp đồng hiện tại
+       - Usage rights: Vietnam Team có thể dùng cho projects khác không?
+       - Distribution rights: Như đã thỏa thuận trong hợp đồng
+       - (Nếu Option 3) Outsource projects IP handling?
+    
+    g. Quality & Process
+       - Code review process: Who reviews?
+       - Testing requirements: Unit tests? Integration tests?
+       - Documentation: Level of detail required?
+       - Deployment process: Who deploys? Approval process?
+
+0.4. Đề xuất của Vietnam Team (sau khi nghe khách trả lời)
+    
+    Tùy vào câu trả lời của khách, đề xuất option phù hợp:
+    
+    Nếu khách chỉ muốn làm SBM, short-term:
+    → Đề xuất OPTION 1 (Project-based)
+    - Rõ ràng, đơn giản
+    - Phù hợp với Phase2 và các phase tiếp theo
+    
+    Nếu khách muốn long-term, có nhiều dự án:
+    → Đề xuất OPTION 2 (Retainer/Partnership)
+    - Monthly retainer + project fees
+    - Better communication và commitment
+    - Có thể làm nhiều dự án LSMK
+    
+    Nếu khách muốn expand tại VN, scale lớn:
+    → Đề xuất OPTION 3 (Build Vietnam Team/Company)
+    - Official presence tại Việt Nam
+    - Có thể scale và làm nhiều projects
+    - Gợi ý nhẹ về outsource opportunities
+    
+    Common points cho mọi option:
+    - Communication: Weekly sync, bi-weekly deep dive
+    - Long-term partnership mindset
+    - Continuous improvement process
+    - Transparent pricing và clear deliverables
+    - Quality assurance và professional standards
+
+
+═══════════════════════════════════════════════════════════════
+⚠️ INTERNAL STRATEGY NOTES (KHÔNG TRÌNH BÀY VỚI KHÁCH)
+═══════════════════════════════════════════════════════════════
+
+Lưu ý quan trọng:
+- Vietnam Team hiện đang có công việc full-time tại Việt Nam
+- Làm LSMK projects trên cơ sở part-time/after-hours
+- KHÔNG đề cập trực tiếp đến "part-time" hoặc "có công việc full-time" khi nói với khách
+- Dùng các từ như "flexible schedule", "flexible timeline", "after-hours availability"
+
+Chiến lược trình bày:
+1. Option 1 (Project-based):
+   - Nhấn mạnh "flexible timeline" thay vì "part-time"
+   - Timeline có thể linh hoạt để đảm bảo quality
+   - Không đề cập đến số giờ cụ thể
+
+2. Option 2 (Retainer):
+   - Nhấn mạnh "flexible schedule" và "guaranteed minimum hours"
+   - Có thể sync meetings vào thời gian phù hợp
+   - Không nói rõ là "part-time commitment"
+
+3. Option 3 (Build Team):
+   - Đây là long-term goal, không phải immediate
+   - Có thể transition từ Option 2 nếu cả hai bên hài lòng
+   - Không đề cập đến việc "quit công việc hiện tại"
+
+Time Commitment thực tế (internal):
+- Part-time: ~20-30 giờ/tuần (sau giờ làm việc chính)
+- Flexible timeline để phù hợp với schedule
+- Có thể tăng giờ nếu cần (với thỏa thuận)
+- Communication: Có thể sau giờ làm hoặc weekends
+
+Questions để đánh giá khách hàng (internal):
+- Khách có chấp nhận flexible timeline không?
+- Timeline expectations có realistic không?
+- Có cần urgent delivery không? (Nếu có, có thể không phù hợp)
+- Có sẵn sàng chờ quality hơn là speed không?
+
+Strategy:
+- Nếu khách cần urgent → Có thể đề xuất tăng commitment hoặc scale team
+- Nếu khách flexible → Option 1 hoặc 2 đều phù hợp
+- Nếu khách muốn long-term → Option 2 là tốt nhất
+- Option 3 chỉ đề xuất nếu khách thực sự muốn expand và có budget
+

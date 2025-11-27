@@ -1,0 +1,157 @@
+OUTLINE TRÌNH BÀY VỚI KHÁCH HÀNG - PHASE2 & TƯƠNG LAI
+========================================================
+
+═══════════════════════════════════════════════════════════════
+PHẦN 0: MỐI QUAN HỆ HỢP TÁC (ƯU TIÊN THẢO LUẬN ĐẦU TIÊN)
+═══════════════════════════════════════════════════════════════
+
+📋 Xem chi tiết trong file: MoiQuanHeHopTac.txt
+
+Tóm tắt:
+- 3 mô hình hợp tác: Project-based, Retainer/Partnership, Build Vietnam Team/Company
+- Questions để hỏi khách về scope, timeline, budget, future plans
+- Các điểm cần làm rõ: Communication, Payment, IP Rights, Quality
+- Đề xuất option phù hợp dựa trên câu trả lời của khách
+
+
+═══════════════════════════════════════════════════════════════
+PHẦN 1: TỔNG QUAN TÌNH HÌNH HIỆN TẠI
+═══════════════════════════════════════════════════════════════
+
+1.1. Phase1 - Đã hoàn thành
+    - SBM đã được phát triển và chạy thành công
+    - Codebase đã được upgrade và hoạt động ổn định
+    - Đã gửi đầy đủ source code và tài liệu
+
+1.2. Vấn đề nhận diện
+    - SBM hiện tại chạy chung nền tảng với BM → gây xung đột
+    - Cần tách biệt hoàn toàn để đảm bảo stability
+    - Cần refactoring để có kiến trúc tối ưu
+
+1.3. Kết quả test SBM tại Gwangju
+    - Đánh giá kết quả test (nếu có)
+    - Các vấn đề phát hiện được
+    - Feedback từ người dùng
+
+
+═══════════════════════════════════════════════════════════════
+PHẦN 2: GIẢI PHÁP KỸ THUẬT - OPERATIONAL SEPARATION
+═══════════════════════════════════════════════════════════════
+
+2.1. Kiến trúc mới
+    - Tách biệt hoàn toàn SBM khỏi BM
+    - Independent codebase và database
+    - Shared services/common modules (nếu cần)
+
+2.2. Migration Plan
+    - Chiến lược migration từ hiện tại sang kiến trúc mới
+    - Timeline migration
+    - Risk mitigation
+
+2.3. Technical Benefits
+    - Stability: không còn xung đột giữa BM và SBM
+    - Scalability: dễ mở rộng từng platform độc lập
+    - Maintainability: dễ bảo trì và phát triển
+    - Performance: tối ưu riêng cho từng platform
+
+
+═══════════════════════════════════════════════════════════════
+PHẦN 3: PHASE2 - CÁC TÍNH NĂNG MỚI
+═══════════════════════════════════════════════════════════════
+
+3.1. Performance & Stability Improvements
+    - Photo upload speed optimization (giảm 60-70% thời gian)
+    - Offline queue cho vùng tín hiệu yếu (tránh mất dữ liệu)
+    - Free trial & watermark control (3 weekdays, watermark PDF)
+
+3.2. Admin & Management Features
+    - Admin Console cho LSMK (quản lý users, companies, billing)
+    - E-invoice automation (tự động hóa hóa đơn ngày 25 hàng tháng)
+    - Company-based User Management
+    - Inspector Web Access (View-only)
+
+3.3. Multilingual Support
+    - App: Flutter Intl (KR/EN/JP)
+    - Web: i18next/react-i18next (KR/EN/JP)
+    - Reports: Country-based templates (KR/JP/EN) với formatting chuẩn
+
+3.4. Building Management System (BMS)
+    - Structured building data
+    - Link inspections to buildings
+    - History tracking và consistent reporting
+
+
+═══════════════════════════════════════════════════════════════
+PHẦN 4: CHI PHÍ VÀ TIMELINE
+═══════════════════════════════════════════════════════════════
+
+4.1. Refactoring & Migration
+    - Chi phí full codebase refactoring
+    - Chi phí migration
+    - Timeline thực hiện
+
+4.2. Phase2 Features
+    - Chi phí từng feature/tính năng
+    - Priority-based pricing
+    - Package options
+
+4.3. Payment Schedule
+    - Milestone-based payments
+    - Payment terms
+    - Deliverables cho từng milestone
+
+
+═══════════════════════════════════════════════════════════════
+PHẦN 5: ROADMAP DÀI HẠN
+═══════════════════════════════════════════════════════════════
+
+5.1. 6 tháng tới
+    - Hoàn thành Phase2 features
+    - Stabilize platform mới
+    - Market testing
+
+5.2. 12 tháng tới
+    - Mở rộng thị trường Nhật Bản
+    - Global expansion preparation
+    - Enterprise features
+
+5.3. Partnership & Collaboration
+    - Long-term partnership model
+    - Continuous improvement process
+    - Communication framework
+
+
+═══════════════════════════════════════════════════════════════
+PHẦN 6: Q&A & NEXT STEPS
+═══════════════════════════════════════════════════════════════
+
+6.1. Questions & Concerns
+    - Giải đáp thắc mắc của khách hàng
+    - Thảo luận các vấn đề kỹ thuật
+    - Clarify requirements
+
+6.2. Decision Points
+    - Approve Phase2 proposal
+    - Approve pricing
+    - Confirm timeline
+
+6.3. Action Items
+    - Các bước tiếp theo
+    - Timeline cụ thể
+    - Responsibilities
+
+
+═══════════════════════════════════════════════════════════════
+NOTES CHO TRÌNH BÀY:
+═══════════════════════════════════════════════════════════════
+
+- Bắt đầu với acknowledgment về Phase1 và cảm ơn
+- Nhấn mạnh tầm quan trọng của operational separation
+- Trình bày rõ ràng benefits của từng giải pháp
+- Có sẵn proposal documents để reference
+- Sẵn sàng thảo luận chi tiết technical aspects
+- Focus vào value và ROI cho khách hàng
+- Thể hiện commitment và professionalism
+
+
+

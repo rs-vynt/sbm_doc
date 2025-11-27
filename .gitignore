@@ -1,0 +1,10 @@
+# Ignore common files
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Ignore if needed
+# *.pdf
+# *.docx
+

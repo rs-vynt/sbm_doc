@@ -1,0 +1,51 @@
+TÓM TẮT THỎA THUẬN BẢO MẬT (baomat.txt)
+
+Thỏa thuận bảo mật (NDA) giữa LSMK Inc., Ltd. (Hàn Quốc) và Vietnam Development Team (Đà Nẵng, Việt Nam).
+
+Các bên:
+- LSMK Inc., Ltd. (Hàn Quốc) - chủ sở hữu Blue Mentor (BM)
+- Vietnam Development Team: Nguyễn Hoàng Phương, Nguyễn Triệu Vỹ, Phan Vĩnh Quý
+
+Mục đích:
+- Bảo mật thông tin liên quan đến phát triển và vận hành nền tảng BM
+
+Nghĩa vụ bảo mật:
+- Không tiết lộ thông tin bí mật cho bên thứ ba
+- Chỉ sử dụng thông tin bí mật cho mục đích của hợp đồng
+- Bảo vệ thông tin với mức độ cẩn trọng hợp lý
+- Không sao chép trừ khi cần thiết cho mục đích hợp đồng
+
+Thông tin bí mật bao gồm:
+- Mã nguồn, UI, mockups, bản vẽ
+- Thông tin kinh doanh, tài chính, kỹ thuật
+- Tất cả tài liệu được đánh dấu "confidential" hoặc "proprietary"
+
+Quyền sở hữu:
+- Thông tin bí mật thuộc sở hữu của bên tiết lộ
+- Phải trả lại hoặc hủy tất cả bản sao khi kết thúc hợp đồng
+
+Cấm reverse engineering:
+- Không được reverse engineering mã nguồn
+- Không được sử dụng cho lợi ích cá nhân hoặc tiết lộ cho công ty khác
+
+Thời hạn:
+- Hợp đồng NDA có hiệu lực 10 năm từ ngày ký (24/7/2025)
+- Sau khi hợp đồng kết thúc (sau 10 năm hoặc khi dự án hoàn thành), nghĩa vụ bảo mật vẫn phải tuân thủ thêm 2 năm nữa
+- Tổng cộng: nghĩa vụ bảo mật có thể kéo dài đến 12 năm (10 năm hợp đồng + 2 năm sau khi kết thúc)
+
+Thanh toán:
+- Chi phí cố định: 3,300 USD
+- Bonus: do LSMK quyết định
+- Thanh toán sau khi giao hàng và nghiệm thu
+
+Milestone:
+- 28/7/2025: Bắt đầu, nghiên cứu
+- 4/8 - 31/8/2025: Lập trình và hoàn thành
+- 1/9 - 5/9/2025: Kiểm thử nội bộ
+- 6/9/2025: Phát hành và giao hàng
+- 6/9 - 30/11/2025: Bảo trì 3 tháng
+
+Luật áp dụng:
+- Luật Hàn Quốc
+- Giải quyết tranh chấp bằng trọng tài tại Seoul, Hàn Quốc
+

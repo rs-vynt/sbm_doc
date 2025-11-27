@@ -1,0 +1,244 @@
+TỔNG HỢP BỐI CẢNH - DỰ ÁN SBM
+================================
+
+═══════════════════════════════════════════════════════════════
+1. TỔNG QUAN DỰ ÁN
+═══════════════════════════════════════════════════════════════
+
+Dự án: Seoul-type BM (SBM) - Phát triển dựa trên nền tảng Blue Mentor (BM)
+
+Các bên:
+- LSMK Inc., Ltd. (Hàn Quốc) - Chủ sở hữu BM, Business License: 496-88-02094
+- CEO: Daniel Song, Ph.D. (宋东晶)
+- Vietnam Development Team (Đà Nẵng, Việt Nam):
+  • Nguyễn Hoàng Phương (Lead)
+  • Nguyễn Triệu Vỹ
+  • Phan Vĩnh Quý
+
+Hợp đồng:
+- Ký kết: 24/7/2025
+- Hiệu lực: 10 năm
+- Thanh toán Phase1: 3,300 USD (fixed) + bonus
+- Luật áp dụng: Luật Thương mại Hàn Quốc
+
+
+═══════════════════════════════════════════════════════════════
+2. PHASE1 - ĐÃ HOÀN THÀNH
+═══════════════════════════════════════════════════════════════
+
+Timeline:
+- 28/7/2025: Bắt đầu, nghiên cứu
+- 4/8 - 31/8/2025: Lập trình và hoàn thành
+- 1/9 - 5/9/2025: Kiểm thử nội bộ
+- 6/9/2025: Phát hành và giao hàng
+- 6/9 - 30/11/2025: Bảo trì 3 tháng
+
+Deliverables:
+- SBM App, Web và Backend
+- Codebase đã được upgrade và chạy thành công
+- Đã gửi đầy đủ source code và tài liệu
+
+Tình trạng:
+✓ Phase1 đã hoàn thành
+✓ Codebase đã được upgrade và hoạt động ổn định
+✓ Đã gửi đầy đủ tài liệu cho thanh toán
+
+
+═══════════════════════════════════════════════════════════════
+3. VẤN ĐỀ HIỆN TẠI
+═══════════════════════════════════════════════════════════════
+
+Vấn đề kỹ thuật chính:
+⚠️ SBM hiện tại chạy chung nền tảng với BM → gây xung đột
+⚠️ Khách hàng nhận xét: "This is, strictly speaking, a problematic approach"
+⚠️ Cần tách biệt hoàn toàn để đảm bảo stability
+
+Vấn đề phát hiện:
+- Sau release 15/9 và 2 field tests (21/9), khách hàng phát hiện vấn đề
+- Khách hàng: "You should have informed me early on whether this approach was optimal"
+- Khách hàng: "We've now reached a point of no return"
+
+Vấn đề khác:
+- Google Play/Apple Store: Chỉ có thể download BM, chưa có SBM
+- Cần fix để SBM có thể download riêng
+
+Yêu cầu từ khách hàng:
+- Đánh giá tình trạng hiện tại
+- Tạo proposal cho "modernizing the system through full codebase refactoring"
+- Tính chi phí refactoring
+- Đảm bảo platform ổn định, không có bug ảnh hưởng users
+
+
+═══════════════════════════════════════════════════════════════
+4. PHASE2 - YÊU CẦU
+═══════════════════════════════════════════════════════════════
+
+4.1. Performance & Stability (Priority: High)
+    1. Photo upload speed optimization
+       - Hiện tại: SBM ~1s, BM ~0.2s
+       - Mục tiêu: Giảm 60-70% thời gian
+       - Giải pháp: Pre-compress, direct S3 upload, optimistic UI
+    
+    2. Stability trong vùng tín hiệu yếu
+       - Vấn đề: Mất dữ liệu khi không có mạng
+       - Giải pháp: Offline queue (min 1GB), auto-sync
+    
+    3. Free trial & watermark control
+       - Giới hạn 3 weekdays
+       - Watermark "Free Use" trên PDF
+
+4.2. Admin & Management (Priority: High)
+    4. Admin Console cho LSMK
+       - Quản lý users, companies, billing
+       - E-invoice automation (ngày 25 hàng tháng)
+    
+    5. Company-based User Management
+    6. Inspector Web Access (View-only)
+
+4.3. Multilingual Support (Priority: High)
+    5. App: Flutter Intl (KR/EN/JP)
+    6. Web: i18next/react-i18next (KR/EN/JP)
+    7. Reports: Country-based templates (KR/JP/EN)
+       - Localized data fields, legal headers
+       - CLDR/ISO formatting
+       - Font fallback (Noto Sans CJK)
+
+4.4. Building Management System (Priority: Medium)
+    9. Structured building data
+    - Link inspections to buildings
+    - History tracking và consistent reporting
+
+
+═══════════════════════════════════════════════════════════════
+5. TÌNH HÌNH KHÁCH HÀNG
+═══════════════════════════════════════════════════════════════
+
+Feedback từ khách hàng:
+- "Thank you for all of your hard work"
+- "I'm grateful that it's now running successfully"
+- "Although SBM isn't quite up to par, I appreciate your hard work"
+- "I believe you've fully grasped the pros and cons of the BM platform"
+
+Concerns:
+- Về technical approach: "This is a problematic approach"
+- Về communication: "You should have informed me early on"
+- Về quality: "We must ensure the platform remains stable"
+
+Expectations:
+- "We should meet in December with the mindset to plan the future together"
+- "Let's discuss the SBM features that need to be updated by December"
+- "Have a pleasant time discussing and discussing future directions together"
+
+Test Results:
+- Test SBM tại Gwangju, Hàn Quốc (thứ 3)
+- Kết quả sẽ gửi vào thứ 4
+- Cần đánh giá kết quả test khi gặp mặt
+
+
+═══════════════════════════════════════════════════════════════
+6. LỊCH TRÌNH GẶP MẶT
+═══════════════════════════════════════════════════════════════
+
+Thời gian: 29-30/11/2025 (Thứ 7 & Chủ nhật)
+
+Lịch trình:
+- Đến: 27/11, 9:45 PM, Terminal 2, Asiana Airlines
+- Khách sạn: Golden Lotus Luxury Hotel Da Nang
+  [198B Tran Bach Dang, Ngu Hanh Son Ward, Da Nang]
+- Gặp mặt: Thứ 7 (29/11) và Chủ nhật (30/11)
+- Về: 2/12, 11:00 PM, Terminal 2, Asiana Airlines về Seoul
+
+Khách hàng nói: "We will talk every matters on the table"
+
+
+═══════════════════════════════════════════════════════════════
+7. MỤC TIÊU CUỘC GẶP
+═══════════════════════════════════════════════════════════════
+
+7.1. Thảo luận về mối quan hệ hợp tác
+    - Làm rõ mô hình hợp tác cho Phase2 và tương lai
+    - Scope: Chỉ SBM hay nhiều dự án LSMK?
+    - Timeline và commitment expectations
+    - Budget và payment structure
+
+7.2. Thảo luận về Phase2
+    - Operational Separation & Refactoring
+    - Chi phí và timeline cho refactoring
+    - Phase2 features và priorities
+    - Pricing và payment schedule
+
+7.3. Thảo luận về tương lai
+    - Roadmap 6-12 tháng
+    - Mở rộng thị trường (Nhật Bản, toàn cầu)
+    - Partnership model
+    - Long-term vision
+
+7.4. Giải quyết vấn đề
+    - Đánh giá kết quả test SBM tại Gwangju
+    - Thảo luận về technical issues
+    - Cải thiện communication process
+    - Quality assurance và best practices
+
+
+═══════════════════════════════════════════════════════════════
+8. TÀI LIỆU CHUẨN BỊ
+═══════════════════════════════════════════════════════════════
+
+Documents đã có:
+✓ Phase2_yeucau.csv - Danh sách 9 features
+✓ 2025-09-27_Phase2_Proposal.docx
+✓ 2025-09-27_Pricing_Proposal-Standard_Rate_Card.docx
+✓ Phase2_Operational_Separation_Tech_Migration_EN_v3.docx
+✓ Outline_ThaoLuan_KhachHang.txt - Outline trình bày
+✓ MoiQuanHeHopTac.txt - Chi tiết về mối quan hệ hợp tác
+
+Cần chuẩn bị:
+□ Excel file liệt kê tất cả SBM upgrades đã làm
+□ Kết quả test SBM tại Gwangju (khách sẽ gửi)
+□ Proposal chi tiết cho refactoring
+□ Pricing breakdown cho Phase2
+□ Timeline cụ thể cho từng phase
+
+
+═══════════════════════════════════════════════════════════════
+9. ĐIỂM QUAN TRỌNG CẦN LƯU Ý
+═══════════════════════════════════════════════════════════════
+
+Về Technical:
+- Khách hàng là software development engineer, hiểu rõ về technical
+- Quan tâm đến best practices và quality
+- Quote: "If developers feel uneasy while developing, that's an error"
+
+Về Communication:
+- Khách đã nhắc về việc nên thông báo sớm hơn
+- Cần cải thiện communication process
+- Regular sync và transparency là quan trọng
+
+Về Approach:
+- Khách muốn "plan the future together"
+- Mindset: Partnership, không chỉ contractor
+- Long-term thinking
+
+Về Quality:
+- Đảm bảo platform stable
+- Không có bug ảnh hưởng users
+- Professional standards
+
+Về Timeline:
+- Khách muốn "expedite the start of Phase 2"
+- Nhưng cũng muốn đảm bảo quality
+- Cần balance giữa speed và quality
+
+
+═══════════════════════════════════════════════════════════════
+10. NEXT STEPS SAU CUỘC GẶP
+═══════════════════════════════════════════════════════════════
+
+Sau khi thảo luận:
+1. Document agreements về mối quan hệ hợp tác
+2. Finalize Phase2 proposal và pricing
+3. Approve timeline và milestones
+4. Update contracts nếu cần
+5. Set up communication framework
+6. Kick-off Phase2 development
+

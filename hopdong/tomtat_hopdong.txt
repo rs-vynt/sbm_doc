@@ -1,0 +1,30 @@
+TÓM TẮT HỢP ĐỒNG (hopdong.txt)
+
+Hợp đồng phát triển phần mềm giữa LSMK Inc., Ltd. (Hàn Quốc) và Vietnam Development Team (Đà Nẵng, Việt Nam).
+
+Các bên:
+- LSMK Inc., Ltd. (Hàn Quốc)
+- Vietnam Development Team: Nguyễn Hoàng Phương, Nguyễn Triệu Vỹ, Phan Vĩnh Quý
+
+Nội dung chính:
+- Phát triển ứng dụng "Blue Mentor" (BM): App, Web và Backend
+- Phát triển Seoul-type BM dựa trên nền tảng BM gốc của LSMK
+- Thực hiện theo các milestone trong NDA
+
+Quyền sở hữu:
+- Quyền sở hữu và vận hành thuộc LSMK
+- Vietnam Team có thể xin phép sử dụng BM tại Việt Nam
+- Phân phối ngoài Việt Nam sẽ được thỏa thuận riêng
+
+Thanh toán:
+- Theo quy định trong NDA
+- Tài khoản: Nguyễn Hoàng Phương, TPBank Đà Nẵng
+
+Thời hạn:
+- Hiệu lực từ 24/7/2025
+- Quyền phát triển chấm dứt sau 10 năm
+
+Luật áp dụng:
+- Luật Thương mại Hàn Quốc
+- Giải quyết tranh chấp tại Tòa án Thương mại Quốc tế Hàn Quốc
+

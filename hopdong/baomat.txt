@@ -1,0 +1,363 @@
+Nondisclosure Agreement - (for External)
+
+This Non-Disclosure Agreement (hereinafter referred to as the “NDA Agreement”) is entered into on
+July 24, 2025 between LSMK Inc., Ltd. (hereinafter referred to as “LSMK”), a company with legal
+rights in relation to Blue Mentor (hereinafter referred to as “BM”) developed and operated by LSMK
+and a company existing under the laws of the Republic of Korea, and developers residing in Danang
+City, Vietnam, Mr. Nguyễn Hoàng Phương, Mr. Nguyễn Triệu Vỹ, Mr. Phan Vĩnh Quý (hereinafter
+referred to as “Vietnamese S/W Engineer or Developer and they called ‘Vietnam Team’”).
+Each of them is referred to as a “Party” and together they are referred to as the “Parties”.
+In the meantime, the parties hereto are each referred to as a "Party" and together as the "Parties", and
+the parties hereto wish to state that this Agreement relates to the operation of the BM Platform
+(hereinafter referred to as the "Purpose"), and furthermore each party hereto agrees to disclose certain
+aspects of the Confidential Information (as defined below) to the other party only in accordance with
+the purpose and terms of this Agreement (hereinafter referred to as the "Purpose").
+In the meantime, each party intends to disclose to the other party only certain aspects of Confidential
+Information (as defined below) that are relevant to and solely for the purpose of this Agreement,
+subject to the terms of this Agreement.
+In the meantime, for these premises and other good and valuable consideration, the receipt of which is
+hereby acknowledged, the parties hereby agree as follows:
+1. Confidential Information: “Confidential Information” includes all business, financial, contractual,
+marketing and/or technical information disclosed, may be disclosed or accessed by a party and/or
+its affiliates (“Discloser”) to the other party and/or its affiliates (“Recipient”) in any form, which
+(a) if disclosed in writing is marked “confidential,” “proprietary” or other similar mark at the time
+of disclosure, or (b) if provided orally or visually is identified as confidential at the time of
+disclosure and confirmed in writing to the Recipient within 15 days of such disclosure. For the
+
+avoidance of doubt, all coding samples, mockups, drawings, UIs, Source code including open-
+source S/W or Products provided by LSMK shall be deemed Confidential Information of LSMK,
+
+whether or not marked.
+Recipient may disclose Discloser's Confidential Information to Recipient's affiliates, and Recipient
+shall limit access to Discloser's Confidential Information to developers who have a legitimate need
+to know in order to carry out the purpose and who are obligated to protect such Confidential
+Information in accordance with the terms and conditions contained in this Agreement. Recipient
+shall be liable for any failure to comply with any provision of this Agreement as if such failure
+were an act or omission of Recipient.
+For the purposes of this Agreement, “Affiliate” means any entity that directly or indirectly controls,
+is controlled by, or is under common control with a Party to this Agreement as of the Effective
+
+Confidential NDA Number: 25-0724
+
+LSMK Vietnam team
+Date, but only for the period during which such control exists. For the avoidance of doubt, the
+cessation of such control shall not relieve Affiliate from its obligation to comply with the terms of
+this Agreement, nor shall it relieve Recipient from its obligation to treat such Affiliate’s Confidential
+Information in accordance with this Agreement.
+2. Nondisclosure and Nonuse Obligations: Each Party, as the Recipient, agrees and covenants to
+receive and hold the Confidential Information in confidence and to protect and safeguard the
+Confidential Information from unauthorized use or disclosure with at least the same degree of care
+that the Recipient exercises in its own Confidential Information, but not less than reasonable care,
+of similar importance. In no event shall the foregoing limit the generality of the foregoing.
+Accordingly, each Party, as the Recipient, covenants and agrees to the following:
+(a) The Developer or its affiliates shall not disclose, make accessible, reveal, report, publish,
+distribute or transfer any confidential information to any third party directly or indirectly in
+any way, and shall not use the BM for any purpose. However, the BM in Vietnamese format
+may be distributed after obtaining permission from LSMK and obtaining a usage agreement;
+(b) You will not use any Confidential Information in any way except to achieve the purposes set
+out in this Agreement;
+(c) Restrict access to Confidential Information to those who have a legitimate need to know in
+order to carry out the purpose for which it was made and to those who are obligated to protect
+such Confidential Information under terms no less protective than those contained in this
+Agreement; and
+(d) Do not duplicate or copy confidential information except to the extent necessary to achieve
+the purpose.
+
+In addition, the existence of any business negotiations, discussions or agreements in progress
+between the parties shall be kept confidential and shall not be disclosed without the written consent
+of all parties. Each party shall be liable for any failure to comply with any provision of this
+Agreement, as such failure shall be deemed to be an act or omission of the recipient.
+
+3. Exclusion of Obligations: Confidential Information does not include, and the obligations under
+Section 2 do not apply to, any information that the recipient can demonstrate: (a) is or later
+becomes publicly available through no act or omission of the recipient; (b) was rightfully in the
+recipient’s possession prior to disclosure to the recipient; (c) was received by the recipient in good
+faith from a third party without any obligation of confidentiality; (d) is communicated by the
+
+Confidential NDA Number: 25-0724
+
+LSMK Vietnam team
+disclosing party to an unaffiliated third party without restriction; or (e) is independently developed
+without using the disclosing party’s Confidential Information.
+Disclosure of Confidential Information of the other party by the recipient in response to a valid
+order of a court or governmental agency or as otherwise required by law shall not be deemed a
+breach of this Agreement or a waiver of confidentiality for any other purpose, provided that the
+recipient promptly gives prior written notice to the disclosing party and allows the disclosing party
+to take steps to maintain the confidentiality of the Confidential Information.
+4. Ownership and Return of Confidential Information: Confidential Information disclosed by the
+Discloser shall remain the property of the Discloser, and no license or other right to the Confidential
+Information of the Discloser is granted or implied herein. The Recipient shall reproduce any
+symbols, captions or other proprietary notices attached to the Confidential Information and shall
+not remove, add or modify them or allow any third party to do so.
+
+Upon termination of this Agreement or at the written request of the Discloser, the Recipient shall
+promptly (but not later than ten (10) days after the Discloser notifies the Recipient thereof) return
+or, at the Discloser’s option, destroy all copies of the Discloser’s Confidential Information and
+certify in writing that it complies with these requirements; provided, however, that the Recipient
+may retain copies of such Confidential Information solely for archival or maintenance purposes.
+
+5. Reverse Engineering: No party that is a recipient shall use or attempt to use the source code,
+underlying ideas, techniques or algorithms of the Confidential Information for its own benefit or
+profit, except in cases where the Discloser specifically authorizes in writing in advance for the
+further development of BM, and reverse engineering by using it for personal benefit or leaking it
+to an outside company is prohibited.
+
+This Agreement shall not preclude or restrict the independent development by or on behalf of any
+Party of any product or system that is competitive with or incorporates technology or information
+of a similar nature to that disclosed herein or is conceived by such information, provided that such
+development is carried out without using or relying on any Confidential Information of any other
+Party..
+
+6. No Warranty: Confidential Information is provided "as is" and "as available" without any
+warranties of any kind, express, implied or otherwise, with respect to such Confidential
+Information. Nothing contained herein shall be construed as a promise by either party to disclose
+
+Confidential NDA Number: 25-0724
+
+LSMK Vietnam team
+Confidential Information, enter into or continue negotiations, or enter into any contract or business
+relationship. Neither this Agreement nor the disclosure or receipt of Confidential Information
+constitutes or implies any promise or intention by either party or its personnel to develop,
+manufacture, purchase or sell any current or future products or services. Any promise to do or
+promise to do any of the foregoing must be in a separate writing signed by an authorized
+representative of each party and delivered to LSMK. If such agreement contains a warranty
+provision, such provision shall take precedence over the corresponding provision of this Agreement.
+Recipient shall bear its own fees, costs and expenses incurred in connection with the Agreement in
+performing this Agreement.
+
+7. Subcontractors: If Recipient determines that a third party (“Subcontractor”) is required to fulfill
+the requirements of this Agreement for the Purposes and such Subcontractor may require access to
+Discloser’s Confidential Information:
+(a) Recipient shall obtain prior written permission to disclose such Confidential Information to any
+Subcontractor; and
+(b) Recipient shall enter into a confidentiality agreement with such Subcontractor that is at least as
+restrictive as the confidentiality requirements of this Agreement and shall provide Discloser with
+written confirmation of the existence of such agreement; and
+(c) Recipient shall be solely responsible for any and all legal liability that may arise as a result of such
+Subcontractor’s actions and shall indemnify Discloser for any loss, damage, claim or expense
+(including reasonable attorneys’ and witness fees) that may arise or be incurred as a result of
+Discloser’s disclosure of such Confidential Information.
+
+8. Term and Termination: The Agreement shall remain in effect for ten (10) years from the Effective
+Date. Termination upon completion of this Project shall not relieve Recipient of its obligations to
+maintain confidentiality and use Confidential Information disclosed prior to the termination date.
+Except for the right to use Confidential Information for purposes for which termination is granted,
+Recipient’s obligations to protect Discloser’s Confidential Information shall expire two (2) years
+after the date this Agreement is terminated or expires in accordance with this provision. Articles 4
+(Ownership and Return of Confidential Information), 5 (Prohibition of Reverse Engineering), 7(c)
+(Subcontractors), 8 (Term and Termination), 10 (Export), 11 (Remedies), and 15 (Law and
+Jurisdiction) shall survive the termination of this Agreement.
+9. Contact: All notices, documents and communications shall be written in English and shall be based
+on the English language. They shall be sent directly to the relevant address specified below or by
+email and SNS and shall be deemed to have been delivered on the date of receipt.
+
+Confidential NDA Number: 25-0724
+
+LSMK Vietnam team
+10.S/W Export and Import: Each Party shall comply with all applicable export and import laws,
+regulations and rules, including international export and import laws of Korea and Vietnam, and
+in particular shall not export or import or re-export Confidential Information without obtaining
+all necessary licenses, approvals or waivers from LSMK of Korea.
+
+11. Remedies.: Each party acknowledges that if it discloses, uses or misappropriates the other party's
+Confidential Information in breach of this Agreement, such party may suffer irreparable harm and
+may not have adequate remedies at law. Accordingly, each party agrees that such other party shall
+have the right to seek injunctive relief and specific performance in any court of competent
+jurisdiction without prejudice to any other remedies available to it at law or in equity.
+Representative of the Vietnamese side
+Mr. Nguyễn Hoàng Phương:
+
+LSMK Inc,Ltd in Korea
+Business registration number: 496-88-02094
+
+Phone number: +84 905 160 793
+Email: hoangphuong167vn@gmail.com
+Citizen ID: 049093011909
+
+Name: Daniel Song, Ph.D. (宋东晶)
+Title :CEO & Founder
+E-mail: wwwwsong@naver.com
+
+Address: 46 Ton Duc Thang, Binh An, Tien
+Phuoc, Da Nang City, Vietnam
+Signature:
+
+Mr. Nguyễn Triệu Vỹ:
+Phone number: +84 769 222 297
+Email: nguyentrieuvy97@gmail.com
+Citizen ID: 049097011252
+Address: Hamlet 3, Lanh Ngoc Commune,
+Da Nang City, Vietnam
+Signature:
+Mr. Phan Vĩnh Quý:
+Phone number: +84 367 324 657
+Email: quy.120993@gmail.com
+Citizen ID: 049093021780
+Address: 28 Tran Thu Do, Ban Thach, Da
+Nang City, Vietnam
+Signature:
+
+Address: SK V1 Gl, Metrocity A-907, 128,
+Beobwon-ro, Songpa-gu, Seoul, Korea
+Signature :
+
+Confidential NDA Number: 25-0724
+
+LSMK Vietnam team
+12. Assignment: Neither party shall be entitled to assign, transfer or otherwise transfer this Agreement
+or any or all of its rights or obligations hereunder, by operation of law or otherwise, without the
+prior written consent of all parties, and any attempt to do so without such consent shall be null
+and void.
+
+13. No Waiver: No claim, right, or remedy of a party under this Agreement shall be deemed waived,
+in whole or in part, unless such waiver is in writing and signed. No indulgence, forbearance, delay,
+or indulgence by a party in enforcing any provision of this Agreement shall prejudice, affect, or
+limit that party's rights under this Agreement, and no waiver by a party of any breach of this
+Agreement shall operate as a waiver of any subsequent or continuing breach.
+
+14. Severability: If any provision of this Agreement is held to be illegal, invalid or unenforceable, (i)
+such provision will be deemed modified to achieve, as nearly as possible, the same economic effect
+as the original provision, and (ii) the legality, validity and enforceability of the remaining provisions
+of this Agreement will not be affected or impaired thereby.
+
+15. Law and Jurisdiction.: Unlike any other agreement, this NDA Agreement shall be governed by and
+construed in accordance with the laws of the Republic of Korea (excluding any conflict of law
+provisions that may direct the application of the laws of another jurisdiction). Except for the
+remedies set forth in Article 11 (Remedies), any dispute, controversy, or claim (including its
+existence, validity, or termination) arising between the parties hereto arising out of or in connection
+with this Agreement shall be finally resolved by arbitration held in Seoul, Korea and conducted in
+English under the Arbitration Rules of the Korean Chamber of Commerce and Industry; provided,
+however, that either party may enforce its or its affiliates’ intellectual property rights in any court
+of competent jurisdiction, including but not limited to equitable relief. The arbitration award shall
+be final and binding on the parties. Except to the extent disclosure is necessary for the entry and
+subsequent enforcement of the award, all matters relating to the arbitration, including the award,
+shall be kept confidential.
+
+16. Complete Agreement: This Agreement constitutes the entire agreement of the parties with respect
+to all the subject matter hereof and may not be amended or modified except in writing signed by
+each party to this Agreement. The English text of this Agreement shall prevail over any translation.
+If the parties enter into an agreement for the purpose, this Agreement shall be deemed incorporated
+into such agreement, in addition to any confidentiality obligations (if any) set forth in such
+
+Confidential NDA Number: 25-0724
+
+LSMK Vietnam team
+agreement, and the term of this Agreement shall be deemed to be extended (but not shortened) by
+the same period as the term of the Agreement.
+
+17. Electronic Signature: The parties may execute this Agreement in duplicate and in counterparts, each
+of which shall be deemed an original, but all together shall constitute one and the same Agreement.
+This Agreement may be transmitted by electronic communication in pdf format, and a pdf copy
+of the executed signature pages shall be as binding as the original.
+
+IN WITNESS WHEREOF, the parties hereto, being duly authorized to do so, have executed this
+Agreement as of the date first above written, and to be legally bound.
+For and on behalf of For and on behalf of
+Viet Nam Development Team LSMK Inc,Ltd in Korea
+By: By: Daniel Song, Ph.D. (宋东晶)
+Name 1: Nguyễn Hoàng Phương
+S.S.Number; 049093011909
+Signature;__________________________
+Name 2: Nguyễn Triệu Vỹ
+S.S.Number; 049097011252
+Signature;__________________________
+Name 3: Phan Vĩnh Quý
+S.S.Number; 049093021780
+Signature;__________________________
+
+Signature;
+
+Title :CEO & Founder
+Business registration number :496-88-02094
+
+Confidential NDA Number: 25-0724
+
+LSMK Vietnam team
+
+Appendix A
+
+BM S/W information:
+
+1. Activities under this Agreement include information that LSMK provides to the Vietnam S/W
+Development Team so that they can develop the information that can be manufactured locally
+in Vietnam and port it to where LSMK wants.
+2. LSMK may include confidential information including but not limited to information on the
+technology and components of BM that LSMK developed in accordance with the contracted
+NDA and key information.
+3. Based on the "Party Agreement and NDA Terms", LSMK will attach the following materials to
+the Vietnam S/W Development Team and provide other materials via email or SNS upon
+request.
+4. Attached materials.
+1. 25-07-21_Seoul type- Table comparison analysis_Edit_1.docx
+2. Example of the final result _1.4V_LSMK Building + Mechanical Equipment +
+Performance Inspection + Report-Kr.xlsx
+3. 250724_LSMK SW Developer Accounts.xlsx
+
+Confidential NDA Number: 25-0724
+
+LSMK Vietnam team
+
+Milestone
+
+Proposed Timeline
+Start Date: Jul 28 (expectation)
+- First Week: Study the business, source code, prepare the testing device, and set up the development
+environment.
+
+Period Contents Note
+July 28, 2025 Start & Study the business, source code, prepare the testing device,
+
+and set up the development environment.
+
+Aug 4th, 2025 ~
+Aug 31st, 2025
+
+Start cording and complete all the tasks which is described in the file
+of “25-07-21_Seoul type- Table comparison analysis_Edit_1.pdf”
+
+Sep. 1st, 2025 ~
+Sep. 5th, 2025
+
+Internal Test for debugging
+
+Sep 6th, 2025 Publish and All materials developed are transmitted and delivered to
+
+LSMK in the form of electronic documents.
+
+Publish &
+delivery
+
+Sep. 6th ,2025~
+Nov 30th ,2025
+
+This is a maintenance period of 3 months for debugging in case a user
+discovers a program bug.
+
+Done
+
+Confidential NDA Number: 25-0724
+
+LSMK Vietnam team
+
+Development Cost
+
+Fees & Payment
+Total payment is divided into two parts:
+● Fixed cost: 3,300 USD
+● Bonus: decided by LSMK
+Payment methods: bank transfer cash
+Payment schedule: after final delivery and acceptance.
+
+Confidential NDA Number: 25-0724
+
+LSMK Vietnam team
+
+Appendix B
+
+Limited Guarantee:
+
+The Vietnam team will sign a limited warranty to guarantee that the development will not affect the
+operation of the existing BM, and that the Vietnam team will guarantee the contents developed by
+the Vietnam team.
+- The three members of the Vietnam team will write and sign the warranty contents in their own
+handwriting. –

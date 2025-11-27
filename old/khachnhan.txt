@@ -1,0 +1,21 @@
+Dear all,  Thank you for all of your hard work.
+Despite the warning issues with the codebase upgrade, I'm grateful that it's now running successfully.
+I'm saying this out of concern, but I'm sure you're well aware that we always update the version with the upgraded content. Also, if you go to Google Play or the Apple Store, you'll only be able to download the BM. This needs to be fixed, right? What are your thoughts?
+Regarding the upgraded overall test of SBM, we're planning to test it in Gwangju, southern Korea, next Tuesday. I'll send you the results next Wednesday.
+
+Regarding SBM, please send me an Excel file containing all the SBM upgrades you've made so far. I'll review the Excel file and review it.
+Also, I'm reviewing the [2025-09-25_Phase2_Operational_Separation_Tech_Migration.pdf] you suggested to me yesterday. Before we even began initial development, the concept of SBM co-existing with BM was never even a given. Naturally, conflicts would arise in that scenario. However, this is exactly what happened with the SBM I commissioned you to implement. After your release on September 15th and the subsequent two SBM field tests between September 21st, I sensed something was off. And as you reported yesterday, I knew that SBM was co-existing with BM on the BM platform. As a software development engineer, this is, strictly speaking, a problematic approach.
+You should have informed me early on whether this approach to building SBM was the optimal solution.
+However, we've now reached a point of no return.
+In this situation, we must find the best solution. We must ensure the platform remains stable, and we must not discover bugs that could disrupt the BM and SBM users' operations. Therefore, you must carefully consider upgrading to ensure optimal operation within the remaining time. When I was studying in the US, my professors always said, "If hardware or software developers feel uneasy while developing, that's an error." I still hold this in my heart.
+
+Regarding the proposal you made to me [2025-09-25_Phase2_Operational_Separation_Tech_Migration.pdf], please assess the current situation, create a proposal, and send me the cost of "modernizing the system through a full codebase refactoring." I will review it and discuss it during my visit in December. We should meet in December with the mindset to plan the future together.I'm planning to visit you in early December to expedite the start of Phase 2. Anyway, I've done my best up until today, and although SBM isn't quite up to par, I appreciate your hard work. I believe you've fully grasped the pros and cons of the BM platform and have fully grasped them. Therefore, let's discuss the SBM features that need to be updated by December, and have a pleasant time discussing and discussing future directions together. Thank you for your hard work.
+
+And as I told you yesterday, please send me the source code and all other related information by tomorrow morning at the latest. To ensure it's not too late, the bank transfer will be completed by 3 PM.
+This is because, in order for LSMK to send you the remaining balance, any Korean bank must have all the necessary documents (contracts, completed source code, and miscellaneous information related to its implementation, etc.) for overseas remittance. When sending this information, please send it to my email address (wwwwsong@naver.com)
+
+Dear all, Announcing my itinerary for my visit to Da Nang, Vietnam.
+
+Arrived at Terminal 2 in Da Nang at approximately 9:45 PM on November 27th via Asiana Airlines.
+Accommodation: Golden Lotus Luxury Hotel Da Nang [198B Tran Bach Dang, Ngu Hanh Son Ward, Da Nang, 550000]
+Departed from Terminal 2 of Da Nang International Airport at 11:00 PM on an Asiana Airlines flight to Seoul, South Korea on December 2nd. I will see you gentlemen Saturday(29) and Sunday (30) and we will talk every matters on the table. See U!

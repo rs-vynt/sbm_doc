@@ -1,0 +1,139 @@
+Seoul-type BM Correction Development with original BM platform
+
+and Term Sheet Contract
+LSMK Inc., Ltd., in Korea
+Between
+
+Vietnam Development Team or called Vietnam Team
+
+July 24, 2025
+
+Companies LSMK Inc., Ltd., in Korea (“LSMK”),
+Business License Number:496-88-02094
+Mr. Nguyễn Hoàng Phương, Mr. Nguyễn Triệu Vỹ and Mr. Phan Vĩnh Quý in
+Danang, Vietnam. (Refers to one team consisting entirely of individuals, called the
+"Vietnam Development Team")
+Collectively referred to as the “Parties” and individually referred to as a “Party.”
+
+【Prolegomena】
+Develop the App, Web, and Backend for the “Blue Mentor” app. Reference file which is mentioned in NDA
+Agreement and detailed execution schedule (Term Sheet) are included in this Agreement, which is a final
+document for a comprehensive agreement between the parties.
+The Vietnam Development Team located in Da Nang, Republic of Vietnam (hereinafter referred to as
+“Vietnam”) (hereinafter referred to as the “Parties” and each referred to as a “Party or Both Parties”) will
+strategically develop a Seoul-type BM with LSMK located in Seoul, Republic of Korea (hereinafter referred
+to as “Korea”) (hereinafter referred to as the “Parties” and each referred to as a “Party or Both Parties”), and
+LSMK will pay financial compensation to the Vietnam Development Team.
+The purpose of this agreement is to further strengthen the strategic relationship between the two parties. To
+this end, the Vietnam development team will complete the development of the BM commissioned by LSMK.
+As soon as the relationship between the two parties comes into effect, the Vietnam Development Team will
+be regarded as a valuable business partner of LSMK. LSMK will treat the Vietnam Development Team as a
+partner company and provide continuous cooperation and support.
+In accordance with the above preamble, the parties continue to endeavor to pursue a strategic relationship on
+the terms and conditions set forth below.
+Therefore, in consideration of the above preamble and the mutual representations, warranties, covenants and
+agreements contained herein, this document is legally binding, and the parties hereby contract as set forth in
+the following text.
+【 Understanding the words used 】:
+◄ APP: Abbreviation for S/W application used on mobile devices. S/W APP created for direct use
+by specialized technicians for mechanical equipment performance inspection on mobile devices
+with Wi-Fi and other network functions.
+◄ Web: An abbreviation for S/W Application of a network-enabled website used on a PC. It is a S/W
+web created by administrators for use on company PCs connected to the Internet.
+
+LSMK Doc_Contract form /LSMKDC_250724-1
+
+2
+
+Vietnam Team LSMK
+LEGAL Doc. 20250724.1
+◄ IP: Patents that conform to the contents of this Agreement,
+◄ BM(Blue Mentor platform): Platform owned by LSMK in Korea.
+◄ NDA (Non-disclosure Agreement): please refer to EXHIBIT 1. Which is The NDA including
+Appendix A, Milestone, Development Cost and Appendix.
+【 Body of the document 】
+Purpose The Vietnam Development Team aims to complete the revision, correction and
+partial development of the BM commissioned by LSMK and deliver it according to
+the Milestone schedule set by LSMK:
+The parties shall complete the transaction as specified in Exhibit A.
+
+Execution and
+scheduling
+planning
+
+The following step-by-step approach applies:
+1. Pre-launch phase
+2. Development phase
+3. Publish and delivery phase
+The parties will complete the plan according to the milestones set out in the NDA.
+
+Owners and
+Operators of BM
+
+Ownership and operation are LSMK. However, when the Vietnamese development
+team tests forwarding on the existing BM and the BM and Seoul-type BM can be
+operated smoothly, LSMK will take over the subject. See NDA.
+
+Exclusive
+Technology
+License
+(Vietnam)
+
+If a Vietnamese team wants to obtain the right to use BM or Seoul-type BM, they
+must obtain permission and approval from LSMK as stated in the NDA.
+
+Technology
+License (Outside
+Vietnam)
+
+For distribution outside of Vietnam, the license, distribution and royalty agreement
+
+between LSMK and the Vietnam development team will be agreed upon on a case-
+by-case basis. However, according to the agreement and NDA signed on July 24,
+
+2025, the distribution of BM may be given top priority to the Vietnam development
+team.
+Payment &
+Remittance
+information
+
+As stated in the NDA.
+Recipient's bank account information id following;
+Recipient's Name: Nguyen Hoang Phuong
+Recipient's Bank Account Number: 01462574702
+Recipient's Bank Name: Tien Phong Commercial Joint Stock Bank (TP Bank)
+Bank Address: TPBank Da Nang Branch
+Ground Floor, Inter‐Provincial & International Post Office Building (formerly No.
+271) 155 Nguyen Van Linh Street, Vinh Trung Ward, Thanh Khe District, Da Nang
+City, Vietnam
+Bank Swift Code: TPBVVNVX
+I/D NO. : 049093011909
+
+Termination
+clause The Vietnam Development Team is the developer of the program commissioned by
+LSMK, and all rights are completely terminated 10 years after the contract date.
+Governing Law The validity period and legal binding of this Agreement shall be effective from July
+24, 2025. If the data from LSMK is transferred to the Vietnam team at the same time
+as the NDA contract and one party fails to perform the contract, the other party must
+
+LSMK Doc_Contract form /LSMKDC_250724-1
+
+3
+
+Vietnam Team LSMK
+LEGAL Doc. 20250724.1
+
+reach an agreement by obtaining the other party's consent through consultation at
+least one week in advance. If both parties fail to perform their promises as agreed,
+the legal binding shall be applied immediately.
+These Terms and Conditions are written in accordance with the Commercial Act of
+the Republic of Korea in accordance with international law and do not violate the
+Commercial Act of Vietnam. It is interpreted that there is no principle of conflict of
+laws.
+Nevertheless, if a legal dispute arises, the dispute shall be filed with the International
+Commercial Dispute Resolution Court of the Republic of Korea and shall be
+terminated according to the decision of the Commercial Dispute Resolution Court.
+The remaining pages are intentionally left blank.
+
+Each party hereto acknowledges that this Agreement is a legally binding and enforceable obligation and
+that this Agreement shall be effective as of the date set forth in the first paragraph above.

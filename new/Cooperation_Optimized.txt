@@ -1,0 +1,192 @@
+PHAN 0: MOI QUAN HE HOP TAC (PHIEN BAN TOI UU)
+===============================================
+
+PARTNERSHIP MINDSET (10-YEAR VISION)
+------------------------------------
+We aim to build a long-term, stable and trusted partnership with LSMK during the full 10 years of the contract.
+The cooperation models below are not limitations. They help both sides identify what structure fits LSMK’s vision,
+development plan and priorities for SBM.
+
+Goal:
+- Build a stable, scalable, high‑quality SBM system
+- Ensure continuity, transparency, and long-term collaboration
+- Choose a cooperation model that supports Phase 2 and future phases
+
+------------------------------------
+0.1. COOPERATION MODELS (TO DISCUSS)
+------------------------------------
+
+OPTION 1: PROJECT-BASED MODEL (Like Phase 1)
+--------------------------------------------
+Scope:
+- Work on SBM projects only (Phase 2, Phase 3, ...)
+- Clear scope, budget, timeline for each project
+- Payment per milestone or completion
+
+Structure:
+- Fixed cost + bonus (like Phase 1)
+- Or milestone-based pricing
+- Ends when project completes
+- Flexible timeline
+
+Pros:
+- Clear scope & cost
+- Easy project management
+- Flexible (can choose projects)
+- Good if focusing only on SBM
+- Timeline flexibility
+
+Cons:
+- Communication gaps between phases
+- No long-term commitment
+- Less continuity
+
+Best if:
+- LSMK only focuses on SBM
+- Fixed budgets per phase
+- Flexible timeline requirements
+
+--------------------------------------------
+
+OPTION 2: RETAINER / PARTNERSHIP MODEL
+--------------------------------------------
+Scope:
+- Ongoing SBM development & maintenance
+- Can also include other LSMK projects
+- Priority support and ongoing improvements
+
+Structure:
+- Monthly retainer (base commitment)
+- Additional project costs for big features
+- VN team acts as “extended development team”
+- Guaranteed minimum hours
+- Flexible schedule
+
+Pros:
+- Stability & long-term commitment
+- Better communication (regular sync)
+- Faster response & continuity
+- Deeper understanding of product
+- Can handle multiple LSMK projects
+- Stable budget for LSMK
+
+Cons:
+- Monthly cost
+- Requires mutual commitment
+
+Best if:
+- Long-term collaboration
+- Frequent support needs
+- Multiple projects besides SBM
+- Need a technical partner
+
+--------------------------------------------
+
+OPTION 3: LONG-TERM POSSIBILITY ONLY (Discuss Only If CEO Requests)
+-------------------------------------------------------------------
+IMPORTANT:
+This option is *not* for Phase 2.
+It is only a long‑term possibility (6–18 months),
+discussed only if LSMK is interested in expanding development activities in Vietnam.
+
+We will NOT go into detail unless Dr. Song requests.
+
+Scope:
+- A dedicated Vietnam development team/company for LSMK
+- Handle all LSMK projects (SBM + others)
+- Possible outsourcing to other companies (if approved by LSMK)
+- Expand team when needed
+
+Structure:
+- Investment or structured partnership by LSMK
+- Monthly budget or revenue sharing model
+- Higher scalability and long-term setup
+
+Notes:
+- Requires full-time commitment in the future
+- Requires legal & management planning
+- Not relevant for Phase 2 discussion unless CEO specifically asks
+
+Transition Path (only if CEO is interested):
+Phase 1 → Retainer Model (Option 2)
+Phase 2 → Higher commitment
+Phase 3 → Dedicated VN team/company
+
+---------------------------------------------
+0.2. QUESTIONS TO ASK CUSTOMER
+---------------------------------------------
+
+Scope:
+□ Only SBM? Or more LSMK projects?
+□ Any future products/services planned?
+
+Relationship:
+□ Short-term or long-term partnership?
+□ Interest in long-term expansion in VN?
+
+Timeline:
+□ Expected timeline for Phase 2?
+□ Flexibility?
+□ Need urgent delivery?
+
+Budget:
+□ Expected budget for Phase 2?
+□ Open to monthly retainer?
+
+Future Plans:
+□ Business expansion plans?
+□ Interest in outsourcing opportunities?
+□ Vision for VN team in 1–2 years?
+
+---------------------------------------------
+0.3. POINTS TO CLARIFY AFTER CHOOSING AN OPTION
+---------------------------------------------
+
+a. Time Commitment & Availability
+- Flexible schedule
+- VN–KR time zone alignment
+- Response time expectations
+- Peak periods flexibility
+
+b. Communication
+- Weekly or bi-weekly sync
+- Channels: WhatsApp, email, video call
+- Escalation process
+
+c. Scope & Expectations
+- Maintenance vs new features
+- Bug fix expectations
+- Technical decision-making
+- Timeline flexibility for quality
+
+d. Payment Structure
+- Project-based or retainer?
+- Maintenance fees?
+- Milestone or monthly payment?
+
+e. Long-Term Commitment
+- Duration (6/12 months)
+- Renewal
+- Exit clauses
+
+f. IP & Rights
+- Code ownership (as in contract)
+- Usage rights
+- Documentation expectations
+
+g. Quality & Process
+- Code review
+- Testing
+- Deployment approval
+
+---------------------------------------------
+0.4. RECOMMENDATION (FOR PHASE 2)
+---------------------------------------------
+Based on current context, the most suitable cooperation model for Phase 2 is:
+
+→ OPTION 2: Retainer / Partnership Model
+
+Reasons:
+- Ensures stability & ongoing improvement
+- Better communication & continuity
+- Supports long-term collaboration

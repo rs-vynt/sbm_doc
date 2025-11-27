@@ -1,0 +1,193 @@
+PHẦN 0: MỐI QUAN HỆ HỢP TÁC (PHIÊN BẢN TỐI ƯU)
+===============================================
+
+TƯ DUY ĐỐI TÁC
+------------------------------------
+Chúng tôi hướng tới xây dựng một mối quan hệ đối tác dài hạn, ổn định và đáng tin cậy với LSMK.
+Các mô hình hợp tác dưới đây không phải là giới hạn. Chúng giúp cả hai bên xác định cấu trúc nào phù hợp với tầm nhìn,
+kế hoạch phát triển và ưu tiên của LSMK cho SBM.
+
+Mục tiêu:
+- Xây dựng hệ thống SBM ổn định, có thể mở rộng, chất lượng cao
+- Đảm bảo tính liên tục, minh bạch và hợp tác dài hạn
+- Chọn mô hình hợp tác hỗ trợ Phase 2 và các phase tương lai
+
+------------------------------------
+0.1. CÁC MÔ HÌNH HỢP TÁC (ĐỂ THẢO LUẬN)
+------------------------------------
+
+OPTION 1: MÔ HÌNH THEO DỰ ÁN (Như Phase 1)
+--------------------------------------------
+Phạm vi:
+- Chỉ làm các dự án SBM (Phase 2, Phase 3, ...)
+- Scope, budget, timeline rõ ràng cho từng dự án
+- Thanh toán theo milestone hoặc khi hoàn thành
+
+Cấu trúc:
+- Chi phí cố định + bonus (như Phase 1)
+- Hoặc định giá theo milestone
+- Kết thúc khi dự án hoàn thành
+- Timeline linh hoạt
+
+Ưu điểm:
+- Scope & chi phí rõ ràng
+- Dễ quản lý dự án
+- Linh hoạt (có thể chọn dự án)
+- Tốt nếu chỉ tập trung vào SBM
+- Timeline linh hoạt
+
+Nhược điểm:
+- Có thể có khoảng trống giao tiếp giữa các phase
+- Cam kết dài hạn có thể ít hơn so với retainer model
+- Tính liên tục có thể thấp hơn
+
+Tốt nhất khi:
+- LSMK chỉ tập trung vào SBM
+- Ngân sách cố định cho mỗi phase
+- Yêu cầu timeline linh hoạt
+
+--------------------------------------------
+
+OPTION 2: MÔ HÌNH RETAINER / ĐỐI TÁC
+--------------------------------------------
+Phạm vi:
+- Phát triển & bảo trì SBM liên tục
+- Có thể bao gồm các dự án LSMK khác
+- Hỗ trợ ưu tiên và cải tiến liên tục
+
+Cấu trúc:
+- Retainer hàng tháng (cam kết cơ bản)
+- Chi phí dự án bổ sung cho các tính năng lớn
+- Team VN hoạt động như "đội phát triển mở rộng"
+- Đảm bảo số giờ tối thiểu
+- Lịch trình linh hoạt
+
+Ưu điểm:
+- Ổn định & cam kết dài hạn
+- Giao tiếp tốt hơn (sync thường xuyên)
+- Phản hồi nhanh hơn & tính liên tục
+- Hiểu sâu hơn về sản phẩm
+- Có thể xử lý nhiều dự án LSMK
+- Ngân sách ổn định cho LSMK
+
+Nhược điểm:
+- Có chi phí cố định hàng tháng
+- Cần cam kết từ cả hai bên để đạt hiệu quả tốt nhất
+
+Tốt nhất khi:
+- Hợp tác dài hạn
+- Cần hỗ trợ thường xuyên
+- Nhiều dự án ngoài SBM
+- Cần một đối tác kỹ thuật
+
+--------------------------------------------
+
+OPTION 3: KHẢ NĂNG DÀI HẠN CHỈ (Chỉ Thảo Luận Nếu CEO Yêu Cầu)
+-------------------------------------------------------------------
+QUAN TRỌNG:
+Option này KHÔNG dành cho Phase 2.
+Nó chỉ là khả năng dài hạn (6–18 tháng),
+chỉ được thảo luận nếu LSMK quan tâm đến việc mở rộng hoạt động phát triển tại Việt Nam.
+
+Chúng tôi SẼ KHÔNG đi vào chi tiết trừ khi Dr. Song yêu cầu.
+
+Phạm vi:
+- Một đội/company phát triển Việt Nam chuyên dụng cho LSMK
+- Xử lý tất cả dự án LSMK (SBM + các dự án khác)
+- Có thể outsource cho các công ty khác (nếu được LSMK chấp thuận)
+- Mở rộng team khi cần
+
+Cấu trúc:
+- Đầu tư hoặc đối tác có cấu trúc bởi LSMK
+- Ngân sách hàng tháng hoặc mô hình chia sẻ doanh thu
+- Khả năng mở rộng cao hơn và thiết lập dài hạn
+
+Lưu ý:
+- Yêu cầu cam kết full-time trong tương lai
+- Yêu cầu lập kế hoạch pháp lý & quản lý
+- Không liên quan đến thảo luận Phase 2 trừ khi CEO đặc biệt yêu cầu
+
+Lộ trình Chuyển đổi (chỉ nếu CEO quan tâm):
+Phase 1 → Mô hình Retainer (Option 2)
+Phase 2 → Cam kết cao hơn
+Phase 3 → Team/company VN chuyên dụng
+
+---------------------------------------------
+0.2. CÂU HỎI ĐỂ HỎI KHÁCH HÀNG
+---------------------------------------------
+
+Phạm vi:
+□ Chỉ SBM? Hay nhiều dự án LSMK hơn?
+□ Có sản phẩm/dịch vụ tương lai nào được lên kế hoạch không?
+
+Mối quan hệ:
+□ Đối tác ngắn hạn hay dài hạn?
+□ Quan tâm đến việc mở rộng dài hạn tại VN?
+
+Timeline:
+□ Timeline mong đợi cho Phase 2?
+□ Tính linh hoạt?
+□ Cần giao hàng khẩn cấp?
+
+Ngân sách:
+□ Ngân sách mong đợi cho Phase 2?
+□ Sẵn sàng với retainer hàng tháng?
+
+Kế hoạch Tương lai:
+□ Kế hoạch mở rộng kinh doanh?
+□ Quan tâm đến cơ hội outsource?
+□ Tầm nhìn cho team VN trong 1–2 năm tới?
+
+---------------------------------------------
+0.3. CÁC ĐIỂM CẦN LÀM RÕ SAU KHI CHỌN OPTION
+---------------------------------------------
+
+a. Cam kết Thời gian & Khả năng
+- Lịch trình linh hoạt
+- Đồng bộ múi giờ VN–KR
+- Kỳ vọng thời gian phản hồi
+- Tính linh hoạt trong thời kỳ cao điểm
+
+b. Giao tiếp
+- Sync hàng tuần hoặc hai tuần một lần
+- Kênh: WhatsApp, email, video call
+- Quy trình escalation
+
+c. Phạm vi & Kỳ vọng
+- Bảo trì vs tính năng mới
+- Kỳ vọng sửa lỗi
+- Ra quyết định kỹ thuật
+- Tính linh hoạt timeline cho chất lượng
+
+d. Cấu trúc Thanh toán
+- Theo dự án hay retainer?
+- Phí bảo trì?
+- Thanh toán theo milestone hay hàng tháng?
+
+e. Cam kết Dài hạn
+- Thời lượng (6/12 tháng)
+- Gia hạn
+- Điều khoản thoát
+
+f. IP & Quyền
+- Quyền sở hữu code (như trong hợp đồng)
+- Quyền sử dụng
+- Kỳ vọng tài liệu
+
+g. Chất lượng & Quy trình
+- Code review
+- Testing
+- Phê duyệt deployment
+
+---------------------------------------------
+0.4. KHUYẾN NGHỊ (CHO PHASE 2)
+---------------------------------------------
+Dựa trên bối cảnh hiện tại, mô hình hợp tác phù hợp nhất cho Phase 2 là:
+
+→ OPTION 2: Mô hình Retainer / Đối tác
+
+Lý do:
+- Đảm bảo ổn định & cải tiến liên tục
+- Giao tiếp & tính liên tục tốt hơn
+- Hỗ trợ hợp tác dài hạn
+
