@@ -1,0 +1,61 @@
+═══════════════════════════════════════════════════════════════
+TOPIC 3: FORMULA/GRAPH & MISSING FEATURES
+═══════════════════════════════════════════════════════════════
+
+Document: 2025-11-29-released for_VT RnD team (English)
+Grouped Date: 2025-11-30
+Timeline: Maximum 1 Week
+
+Description: Insert a formula and have it been graphed. And add a few more things 
+            that were missing in some BM/SBMs.
+
+
+═══════════════════════════════════════════════════════════════
+TASKS
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+TASK 4: Refrigerator Types
+───────────────────────────────────────────────────────────────
+
+Requirement: Distinguish the types of refrigerators
+Types: There are four types:
+      - Medium-temperature absorption
+      - Direct-fired absorption
+      - Turbo
+      - Screw
+Note: The format remains the same.
+
+───────────────────────────────────────────────────────────────
+TASK 5: Boiler Types
+───────────────────────────────────────────────────────────────
+
+Requirement: Distinguish the types of boilers
+Reference: Explanation based on Korea Electric Test data
+Feature: Automatic multiplication of subcategories
+
+───────────────────────────────────────────────────────────────
+TASK 18: Construction Sequence (Includes Formula/Graph)
+───────────────────────────────────────────────────────────────
+
+Requirement: The construction sequence for this step:
+           1. Resolve the building's basement network issue
+           2. Insert equation (FORMULA/GRAPH)
+           3. Re-adjust the admin
+
+Note: This task includes "Insert equation" which relates to formula/graph functionality.
+
+
+═══════════════════════════════════════════════════════════════
+SUMMARY
+═══════════════════════════════════════════════════════════════
+
+Total Tasks: 3
+- Task 4: Refrigerator Types
+- Task 5: Boiler Types
+- Task 18: Construction Sequence (includes formula/graph)
+
+
+═══════════════════════════════════════════════════════════════
+END OF DOCUMENT
+═══════════════════════════════════════════════════════════════

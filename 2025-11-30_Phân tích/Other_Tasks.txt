@@ -1,0 +1,136 @@
+═══════════════════════════════════════════════════════════════
+OTHER TASKS (Not in 3 Main Topics)
+═══════════════════════════════════════════════════════════════
+
+Document: 2025-11-29-released for_VT RnD team (English)
+Grouped Date: 2025-11-30
+
+These tasks are outside the scope of the 3 main topics and may require separate 
+discussion or planning.
+
+
+═══════════════════════════════════════════════════════════════
+TASKS
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+TASK 1: BM/SBM PC (Web) - Quantity Display Issue
+───────────────────────────────────────────────────────────────
+
+Issue: [When entering total quantity - inspection quantity] only displays tens.
+Status: Resolved / App OK. (Phase 1, insufficient)
+
+Solution:
+A. Increase all digits on the web to three digits
+B. Increase the current 500 number in the app to 999
+
+───────────────────────────────────────────────────────────────
+TASK 2: Photography-Related Issues
+───────────────────────────────────────────────────────────────
+
+Issue: BM is more convenient than SBM
+Requirement: Add a continuous shooting function when taking a single photo. 
+            This allows the image to be saved without pressing the save button.
+Status: Currently, a method to simply and immediately process two clicks in 
+       the editing function has been implemented (phase 1, insufficient).
+
+───────────────────────────────────────────────────────────────
+TASK 3: Hot Water Supply Systems
+───────────────────────────────────────────────────────────────
+
+Requirement: Distinguish the types of hot water supply and hot water supply systems - 
+            separate them as the inspection methods differ.
+Note: After I return to Korea, I will look into this matter in more detail and let you know.
+
+[NOTE QUAN TRỌNG] Khách bảo sẽ check lại, hiện tại sẽ không làm
+
+───────────────────────────────────────────────────────────────
+TASK 10: Advertisement Space
+───────────────────────────────────────────────────────────────
+
+Requirement: When using the app, let's create a space where ads can appear 
+            on the front page, and the web as well.
+Category: Monetization & Advertising
+
+───────────────────────────────────────────────────────────────
+TASK 13: Excel to Hangul to PDF Conversion
+───────────────────────────────────────────────────────────────
+
+Requirement: How about allowing Excel on the web to be saved as Hangul and then 
+            converted to PDF?
+Note: The Hangul version explains how to do this, and Chat will guide you.
+
+───────────────────────────────────────────────────────────────
+TASK 15: Database Collection Function
+───────────────────────────────────────────────────────────────
+
+Requirement: Preparation for the introduction of generative AI requires the collection 
+            of a database, so the database collection function must be implemented 
+            at this time.
+Category: Database & Generative AI Preparation
+
+───────────────────────────────────────────────────────────────
+TASK 16: Database Tagging & Statistical Analysis
+───────────────────────────────────────────────────────────────
+
+Requirement: During database collection, each table is tagged with numbers and proper nouns, 
+            so statistical analysis is performed to actively utilize these tags.
+
+Collection Criteria:
+- By region
+- By inspection company
+- By building name
+- By equipment name
+- By inspection results
+- By machine manufacturer
+- etc.
+
+Purpose: So that it can be later generated using generative AI.
+Category: Database & Generative AI Preparation
+
+───────────────────────────────────────────────────────────────
+TASK 17: Database Storage
+───────────────────────────────────────────────────────────────
+
+Requirement: The database should be stored in AWS's own server, collecting all inspection data.
+Category: Database & Generative AI Preparation
+
+───────────────────────────────────────────────────────────────
+TASK 23: Generative AI Introduction
+───────────────────────────────────────────────────────────────
+
+Note: Generative AI will be introduced later.
+Category: Future Feature
+
+
+═══════════════════════════════════════════════════════════════
+SUMMARY BY CATEGORY
+═══════════════════════════════════════════════════════════════
+
+UI/UX Improvements: 2 tasks
+- Task 1: Quantity Display Issue
+- Task 2: Photography - Continuous Shooting
+
+Equipment Type (Pending): 1 task
+- Task 3: Hot Water Supply Systems (Note: Khách bảo sẽ check lại, hiện tại sẽ không làm)
+
+Monetization & Advertising: 1 task
+- Task 10: Advertisement Space
+
+Export & File Formats: 1 task
+- Task 13: Excel to Hangul to PDF Conversion
+
+Database & Generative AI Preparation: 3 tasks
+- Task 15: Database Collection Function
+- Task 16: Database Tagging & Statistical Analysis
+- Task 17: Database Storage
+
+Future Feature: 1 task
+- Task 23: Generative AI Introduction
+
+Total: 9 tasks
+
+
+═══════════════════════════════════════════════════════════════
+END OF DOCUMENT
+═══════════════════════════════════════════════════════════════

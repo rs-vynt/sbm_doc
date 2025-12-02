@@ -1,0 +1,298 @@
+═══════════════════════════════════════════════════════════════
+TOPIC 1: OFFLINE FUNCTIONALITY
+═══════════════════════════════════════════════════════════════
+
+Document: 2025-11-29-released for_VT RnD team (English)
+Grouped Date: 2025-11-30
+Timeline: Maximum 1 Week
+
+Description: This feature allows BM/SBM to record and save data even in locations 
+            without a network connection. This feature allows the mobile app to 
+            capture photos and text that can be accessed offline. In other words, 
+            when the network becomes available, any data that was previously 
+            unavailable can be uploaded immediately.
+
+
+═══════════════════════════════════════════════════════════════
+TASKS
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+TASK 6: Deep Underground Areas - Network Unavailable
+───────────────────────────────────────────────────────────────
+
+Issue: Resolving the use of BM/SBM in deep underground areas where the network 
+       is unavailable
+
+Requirements:
+- Record and save data even in locations without a network connection
+- Mobile app to capture photos and text that can be accessed offline
+- When network becomes available, upload previously unavailable data immediately
+- Maximum storage: 1 Week of data
+
+Reference: Refer to the file in the solution
+Alternative: Propose a better solution and resolve it (e.g., refer to the Dongsan Board)
+
+Technical Notes:
+- Offline queue implementation
+- Auto-sync when network available
+- Data integrity and conflict resolution
+
+
+═══════════════════════════════════════════════════════════════
+SUMMARY
+═══════════════════════════════════════════════════════════════
+
+Total Tasks: 1
+- Task 6: Deep Underground Areas - Network Unavailable
+
+
+═══════════════════════════════════════════════════════════════
+PHẦN DỊCH TIẾNG VIỆT
+═══════════════════════════════════════════════════════════════
+
+CHỦ ĐỀ 1: TÍNH NĂNG HOẠT ĐỘNG OFFLINE
+
+Tài liệu: 2025-11-29-released for_VT RnD team (Tiếng Anh)
+Ngày phân loại: 2025-11-30
+Thời gian: Tối đa 1 Tuần
+
+Mô tả: Tính năng này cho phép BM/SBM ghi và lưu dữ liệu ngay cả ở những nơi 
+       không có kết nối mạng. Tính năng này cho phép ứng dụng di động chụp ảnh 
+       và nhập văn bản có thể truy cập offline. Nói cách khác, khi mạng trở 
+       lại khả dụng, bất kỳ dữ liệu nào trước đó không thể tải lên sẽ được 
+       tải lên ngay lập tức.
+
+
+───────────────────────────────────────────────────────────────
+NHIỆM VỤ
+───────────────────────────────────────────────────────────────
+
+───────────────────────────────────────────────────────────────
+TASK 6: Khu vực sâu dưới lòng đất - Không có mạng
+───────────────────────────────────────────────────────────────
+
+Vấn đề: Giải quyết việc sử dụng BM/SBM ở các khu vực sâu dưới lòng đất nơi 
+        không có mạng
+
+Yêu cầu:
+- Ghi và lưu dữ liệu ngay cả ở những nơi không có kết nối mạng
+- Ứng dụng di động có thể chụp ảnh và nhập văn bản có thể truy cập offline
+- Khi mạng trở lại khả dụng, tải lên ngay lập tức các dữ liệu trước đó không thể tải lên
+- Dung lượng lưu trữ tối đa: 1 Tuần dữ liệu
+
+Tham khảo: Xem file trong giải pháp
+Giải pháp thay thế: Đề xuất giải pháp tốt hơn và giải quyết nó (ví dụ: tham khảo Dongsan Board)
+
+Ghi chú kỹ thuật:
+- Triển khai hàng đợi offline
+- Đồng bộ tự động khi có mạng
+- Toàn vẹn dữ liệu và giải quyết xung đột
+
+
+═══════════════════════════════════════════════════════════════
+PHÂN TÍCH CHI TIẾT
+═══════════════════════════════════════════════════════════════
+
+1. BỐI CẢNH VÀ VẤN ĐỀ
+───────────────────────────────────────────────────────────────
+
+1.1. Vấn đề thực tế:
+    - Khi kiểm tra thiết bị ở các tầng hầm sâu, tầng ngầm của tòa nhà, 
+      tín hiệu mạng thường bị mất hoặc rất yếu
+    - Người kiểm tra không thể ghi nhận dữ liệu, chụp ảnh và lưu vào hệ thống
+    - Dẫn đến mất dữ liệu, phải quay lại kiểm tra lại → tốn thời gian và chi phí
+
+1.2. Tác động:
+    - Giảm hiệu quả công việc của người kiểm tra
+    - Mất dữ liệu quan trọng
+    - Trải nghiệm người dùng kém
+    - Ảnh hưởng đến uy tín của sản phẩm
+
+
+2. YÊU CẦU CHỨC NĂNG
+───────────────────────────────────────────────────────────────
+
+2.1. Lưu trữ dữ liệu offline:
+    - Ứng dụng phải có khả năng lưu trữ dữ liệu cục bộ trên thiết bị
+    - Dung lượng tối đa: 1 tuần dữ liệu (cần tính toán dựa trên:
+      * Số lượng inspection/ngày
+      * Kích thước ảnh trung bình
+      * Dữ liệu text/JSON)
+    - Dữ liệu bao gồm:
+      * Ảnh chụp thiết bị
+      * Thông tin nhập liệu (text, số liệu)
+      * Metadata (thời gian, vị trí GPS nếu có)
+
+2.2. Đồng bộ tự động:
+    - Khi phát hiện có mạng, tự động bắt đầu đồng bộ
+    - Ưu tiên đồng bộ dữ liệu cũ nhất trước
+    - Hiển thị tiến trình đồng bộ cho người dùng
+    - Xử lý lỗi khi đồng bộ thất bại (retry mechanism)
+
+2.3. Quản lý hàng đợi (Queue Management):
+    - Hàng đợi ưu tiên: dữ liệu cũ hơn được ưu tiên đồng bộ trước
+    - Quản lý trạng thái: pending, syncing, synced, failed
+    - Cho phép người dùng xem danh sách dữ liệu chờ đồng bộ
+    - Cho phép xóa/thử lại đồng bộ thủ công nếu cần
+
+
+3. GIẢI PHÁP KỸ THUẬT
+───────────────────────────────────────────────────────────────
+
+3.1. Kiến trúc hệ thống:
+    
+    a) Local Storage:
+       - Sử dụng SQLite (mobile) hoặc IndexedDB (web) để lưu trữ cục bộ
+       - Schema: bảng inspections, photos, sync_queue
+       - Indexing để tìm kiếm nhanh
+    
+    b) Sync Service:
+       - Background service chạy khi có mạng
+       - Batch upload để tối ưu hiệu suất
+       - Compression cho ảnh trước khi upload
+    
+    c) Conflict Resolution:
+       - Timestamp-based: dữ liệu mới hơn sẽ ghi đè
+       - Hoặc merge strategy nếu có thay đổi từ nhiều nguồn
+       - Logging để theo dõi conflicts
+
+3.2. Công nghệ đề xuất:
+    
+    a) Mobile (Flutter):
+       - Package: sqflite cho local database
+       - Package: connectivity_plus để detect network
+       - Package: dio với retry mechanism cho API calls
+       - WorkManager/Background tasks cho sync
+    
+    b) Web:
+       - IndexedDB cho local storage
+       - Service Worker cho background sync
+       - Network Information API để detect connectivity
+    
+    c) Backend:
+       - API endpoint: /api/sync/batch-upload
+       - Xử lý batch upload hiệu quả
+       - Validation và error handling
+
+3.3. Tối ưu hóa:
+    
+    a) Ảnh:
+       - Compress ảnh trước khi lưu offline (giảm 60-70% dung lượng)
+       - Lưu thumbnail để preview nhanh
+       - Upload ảnh gốc khi có mạng tốt
+    
+    b) Dữ liệu:
+       - JSON compression
+       - Chỉ sync delta (thay đổi) thay vì toàn bộ
+       - Pagination cho batch upload
+
+
+4. QUY TRÌNH HOẠT ĐỘNG
+───────────────────────────────────────────────────────────────
+
+4.1. Khi không có mạng:
+    1. Người dùng mở app → App detect không có mạng
+    2. App chuyển sang chế độ offline mode
+    3. Người dùng vẫn có thể:
+       - Chụp ảnh (lưu vào local storage)
+       - Nhập dữ liệu (lưu vào local database)
+       - Xem dữ liệu đã lưu trước đó
+    4. Dữ liệu được đánh dấu "pending sync"
+
+4.2. Khi có mạng trở lại:
+    1. App tự động detect có mạng
+    2. Background service bắt đầu sync
+    3. Upload dữ liệu theo thứ tự ưu tiên (cũ nhất trước)
+    4. Hiển thị notification/indicator cho người dùng
+    5. Sau khi sync xong, đánh dấu "synced"
+    6. Có thể xóa dữ liệu local sau khi sync thành công (tùy chọn)
+
+4.3. Xử lý lỗi:
+    - Nếu sync thất bại: giữ lại dữ liệu, đánh dấu "failed"
+    - Retry sau 5 phút, 30 phút, 2 giờ (exponential backoff)
+    - Cho phép người dùng retry thủ công
+    - Cảnh báo nếu dữ liệu chờ sync quá lâu (> 3 ngày)
+
+
+5. RÀNG BUỘC VÀ GIỚI HẠN
+───────────────────────────────────────────────────────────────
+
+5.1. Dung lượng lưu trữ:
+    - Tối đa 1 tuần dữ liệu
+    - Cần tính toán: 
+      * Giả sử 10 inspections/ngày
+      * Mỗi inspection: 5 ảnh (mỗi ảnh ~500KB sau compress) = 2.5MB
+      * Text data: ~50KB/inspection
+      * Tổng: ~25MB/ngày → ~175MB/tuần
+    - Cần có cơ chế cảnh báo khi gần đầy
+    - Tự động xóa dữ liệu cũ nhất nếu vượt quá
+
+5.2. Hiệu suất:
+    - App vẫn phải mượt khi offline
+    - Sync không được làm chậm app khi đang sử dụng
+    - Batch upload để tránh quá tải server
+
+5.3. Bảo mật:
+    - Mã hóa dữ liệu local (nếu chứa thông tin nhạy cảm)
+    - Authentication token vẫn cần valid khi sync
+    - Xử lý token expiry khi sync
+
+
+6. TESTING VÀ VALIDATION
+───────────────────────────────────────────────────────────────
+
+6.1. Test cases:
+    - Test offline mode: tắt mạng, chụp ảnh, nhập dữ liệu
+    - Test sync: bật mạng lại, kiểm tra dữ liệu được upload
+    - Test conflict: sửa dữ liệu offline, sau đó sync
+    - Test storage limit: tạo dữ liệu > 1 tuần, kiểm tra auto-delete
+    - Test retry: giả lập lỗi network, kiểm tra retry mechanism
+    - Test performance: nhiều dữ liệu chờ sync, kiểm tra tốc độ
+
+6.2. Edge cases:
+    - Mất mạng giữa chừng khi đang sync
+    - Dữ liệu bị corrupt trong local storage
+    - Thiết bị hết dung lượng
+    - App bị kill khi đang sync
+
+
+7. TIMELINE VÀ ƯU TIÊN
+───────────────────────────────────────────────────────────────
+
+7.1. Timeline: Maximum 1 Week
+    - Day 1-2: Design & Architecture
+    - Day 3-4: Implementation (Local storage + Sync service)
+    - Day 5: Testing & Bug fixes
+    - Day 6: Integration & End-to-end testing
+    - Day 7: Documentation & Deployment
+
+7.2. Ưu tiên:
+    - P0: Local storage + Basic sync
+    - P1: Auto-sync + Conflict resolution
+    - P2: UI/UX improvements (progress indicator, manual retry)
+    - P3: Advanced features (compression, optimization)
+
+
+8. TÀI LIỆU THAM KHẢO
+───────────────────────────────────────────────────────────────
+
+- File trong solution (cần xem chi tiết)
+- Dongsan Board (nếu có reference)
+- Phase2 requirements: "Stability in low-signal areas (offline queue)"
+- Best practices: Offline-first architecture patterns
+
+
+═══════════════════════════════════════════════════════════════
+KẾT LUẬN
+═══════════════════════════════════════════════════════════════
+
+Tính năng offline là một yêu cầu quan trọng để cải thiện trải nghiệm người dùng 
+và đảm bảo không mất dữ liệu khi làm việc ở các khu vực không có mạng. Với timeline 
+1 tuần, cần tập trung vào các tính năng core (local storage + basic sync) trước, 
+sau đó mới đến các tính năng nâng cao.
+
+
+═══════════════════════════════════════════════════════════════
+END OF DOCUMENT
+═══════════════════════════════════════════════════════════════

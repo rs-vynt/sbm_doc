@@ -1,0 +1,612 @@
+═══════════════════════════════════════════════════════════════
+NECESSARY CONTENTS OF THINGS THAT NEED TO BE SUPPLEMENTED
+═══════════════════════════════════════════════════════════════
+
+Document: 2025-11-29-released for_VT RnD team (English)
+Total Items: 23
+
+[TIẾNG VIỆT] NỘI DUNG CẦN BỔ SUNG
+Tài liệu: 2025-11-29-released for_VT RnD team (Tiếng Anh)
+Tổng số mục: 23
+
+
+───────────────────────────────────────────────────────────────
+TASK 1: BM/SBM PC (Web) - Quantity Display Issue
+───────────────────────────────────────────────────────────────
+
+Issue: [When entering total quantity - inspection quantity] only displays tens.
+Status: Resolved / App OK. (Phase 1, insufficient)
+
+Solution:
+A. Increase all digits on the web to three digits
+B. Increase the current 500 number in the app to 999
+
+[TIẾNG VIỆT]
+1. BM/SBM PC (Web) - Vấn đề hiển thị số lượng
+   Vấn đề: [Khi nhập tổng số lượng - số lượng kiểm tra] chỉ hiển thị hàng chục.
+   Trạng thái: Đã giải quyết / App OK. (Phase 1, chưa đủ)
+   
+   Giải pháp:
+   A. Tăng tất cả các chữ số trên web lên ba chữ số
+   B. Tăng số 500 hiện tại trong app lên 999
+
+[PHÂN LOẠI TOPIC] Other Tasks
+
+
+───────────────────────────────────────────────────────────────
+TASK 2: Photography-Related Issues
+───────────────────────────────────────────────────────────────
+
+Issue: BM is more convenient than SBM
+Requirement: Add a continuous shooting function when taking a single photo. 
+            This allows the image to be saved without pressing the save button.
+Status: Currently, a method to simply and immediately process two clicks in 
+       the editing function has been implemented (phase 1, insufficient).
+
+[TIẾNG VIỆT]
+2. Vấn đề liên quan đến chụp ảnh
+   Vấn đề: BM tiện lợi hơn SBM
+   Yêu cầu: Thêm chức năng chụp liên tục khi chụp một ảnh. 
+            Điều này cho phép ảnh được lưu mà không cần nhấn nút lưu.
+   Trạng thái: Hiện tại, một phương pháp đơn giản và xử lý ngay lập tức hai lần nhấp 
+              trong chức năng chỉnh sửa đã được triển khai (phase 1, chưa đủ).
+
+[PHÂN LOẠI TOPIC] Other Tasks
+
+
+───────────────────────────────────────────────────────────────
+TASK 3: Hot Water Supply Systems
+───────────────────────────────────────────────────────────────
+
+Requirement: Distinguish the types of hot water supply and hot water supply systems - 
+            separate them as the inspection methods differ.
+Note: After I return to Korea, I will look into this matter in more detail and let you know.
+
+[TIẾNG VIỆT]
+3. Hệ thống cấp nước nóng
+   Yêu cầu: Phân biệt các loại cấp nước nóng và hệ thống cấp nước nóng - 
+            tách chúng ra vì phương pháp kiểm tra khác nhau.
+   Ghi chú: Sau khi tôi trở về Hàn Quốc, tôi sẽ xem xét vấn đề này chi tiết hơn và cho bạn biết.
+   
+   [NOTE QUAN TRỌNG] Khách bảo sẽ check lại, hiện tại sẽ không làm
+
+[PHÂN LOẠI TOPIC] Other Tasks
+
+
+───────────────────────────────────────────────────────────────
+TASK 4: Refrigerator Types
+───────────────────────────────────────────────────────────────
+
+Requirement: Distinguish the types of refrigerators
+Types: There are four types:
+      - Medium-temperature absorption
+      - Direct-fired absorption
+      - Turbo
+      - Screw
+Note: The format remains the same.
+
+[TIẾNG VIỆT]
+4. Các loại tủ lạnh
+   Yêu cầu: Phân biệt các loại tủ lạnh
+   Các loại: Có bốn loại:
+            - Hấp thụ nhiệt độ trung bình
+            - Hấp thụ đốt trực tiếp
+            - Turbo
+            - Vít
+   Ghi chú: Định dạng vẫn giữ nguyên.
+
+[PHÂN LOẠI TOPIC] Topic 3: Formula/Graph & Missing Features
+
+
+───────────────────────────────────────────────────────────────
+TASK 5: Boiler Types
+───────────────────────────────────────────────────────────────
+
+Requirement: Distinguish the types of boilers
+Reference: Explanation based on Korea Electric Test data
+Feature: Automatic multiplication of subcategories
+
+[TIẾNG VIỆT]
+5. Các loại nồi hơi
+   Yêu cầu: Phân biệt các loại nồi hơi
+   Tham khảo: Giải thích dựa trên dữ liệu Kiểm tra Điện Hàn Quốc
+   Tính năng: Tự động nhân các danh mục phụ
+
+[PHÂN LOẠI TOPIC] Topic 3: Formula/Graph & Missing Features
+
+
+───────────────────────────────────────────────────────────────
+TASK 6: Deep Underground Areas - Network Unavailable
+───────────────────────────────────────────────────────────────
+
+Issue: Resolving the use of BM/SBM in deep underground areas where the network is unavailable
+Reference: Refer to the file in the solution
+Alternative: Propose a better solution and resolve it (e.g., refer to the Dongsan Board)
+
+[TIẾNG VIỆT]
+6. Khu vực sâu dưới lòng đất - Không có mạng
+   Vấn đề: Giải quyết việc sử dụng BM/SBM ở các khu vực sâu dưới lòng đất nơi không có mạng
+   Tham khảo: Xem file trong giải pháp
+   Giải pháp thay thế: Đề xuất giải pháp tốt hơn và giải quyết nó (ví dụ: tham khảo Dongsan Board)
+
+[PHÂN LOẠI TOPIC] Topic 1: Offline Functionality
+
+
+───────────────────────────────────────────────────────────────
+TASK 7: Inspection Advice Text Comparison
+───────────────────────────────────────────────────────────────
+
+Requirement: Compare and confirm the SBM (app/web) inspection advice text and 
+            insert any missing items into each item.
+Status: Phase 1, insufficient; insufficient comparison.
+
+[TIẾNG VIỆT]
+7. So sánh văn bản tư vấn kiểm tra
+   Yêu cầu: So sánh và xác nhận văn bản tư vấn kiểm tra SBM (app/web) và 
+            chèn bất kỳ mục nào còn thiếu vào mỗi mục.
+   Trạng thái: Phase 1, chưa đủ; so sánh chưa đủ.
+
+[PHÂN LOẠI TOPIC] Close (Không cần thực hiện)
+
+
+───────────────────────────────────────────────────────────────
+TASK 8: Personalized Page Configuration
+───────────────────────────────────────────────────────────────
+
+Requirement: Verify that the personalized page is configured. 
+           That is, as if it were a user's personal company.
+
+[TIẾNG VIỆT]
+8. Cấu hình trang cá nhân hóa
+   Yêu cầu: Xác minh rằng trang cá nhân hóa đã được cấu hình. 
+           Nghĩa là, như thể đó là công ty cá nhân của người dùng.
+
+[PHÂN LOẠI TOPIC] Topic 2: Admin Enhancements
+
+
+───────────────────────────────────────────────────────────────
+TASK 9: Worker Information Management
+───────────────────────────────────────────────────────────────
+
+Requirements:
+- Enter the ID and user phone number in the worker information management
+- Enter the phone number and user name in the excess
+- When the platform is the same, let's make it usable
+
+Free User Restrictions:
+- Free users should not be able to print everything on the web
+- OR the printed paper should be printed with "Free User Sample" in gray letters
+
+Policy:
+- App is free
+- Web printing requires payment
+
+[TIẾNG VIỆT]
+9. Quản lý thông tin công nhân
+   Yêu cầu:
+   - Nhập ID và số điện thoại người dùng trong quản lý thông tin công nhân
+   - Nhập số điện thoại và tên người dùng trong phần thừa
+   - Khi nền tảng giống nhau, hãy làm cho nó có thể sử dụng được
+   
+   Hạn chế người dùng miễn phí:
+   - Người dùng miễn phí không nên có thể in mọi thứ trên web
+   - HOẶC giấy in nên được in với "Free User Sample" bằng chữ màu xám
+   
+   Chính sách:
+   - App miễn phí
+   - In web yêu cầu thanh toán
+
+[PHÂN LOẠI TOPIC] Topic 2: Admin Enhancements
+
+
+───────────────────────────────────────────────────────────────
+TASK 10: Advertisement Space
+───────────────────────────────────────────────────────────────
+
+Requirement: When using the app, let's create a space where ads can appear 
+            on the front page, and the web as well.
+
+[TIẾNG VIỆT]
+10. Không gian quảng cáo
+    Yêu cầu: Khi sử dụng app, hãy tạo một không gian nơi quảng cáo có thể xuất hiện 
+            trên trang đầu, và web cũng vậy.
+
+[PHÂN LOẠI TOPIC] Other Tasks
+
+
+───────────────────────────────────────────────────────────────
+TASK 11: Complete Separation of BM/SBM Operations
+───────────────────────────────────────────────────────────────
+
+Question: Complete separation of BM/SBM operations?
+
+[TIẾNG VIỆT]
+11. Tách biệt hoàn toàn hoạt động BM/SBM
+    Câu hỏi: Tách biệt hoàn toàn hoạt động BM/SBM?
+
+[PHÂN LOẠI TOPIC] Close (Không cần thực hiện)
+
+
+───────────────────────────────────────────────────────────────
+TASK 12: Free App, Paid Web Version Policy
+───────────────────────────────────────────────────────────────
+
+Question: What about a free app, paid web version policy? What are your thoughts?
+
+[TIẾNG VIỆT]
+12. Chính sách App miễn phí, Web trả phí
+    Câu hỏi: Còn chính sách app miễn phí, web trả phí thì sao? Bạn nghĩ gì?
+
+[PHÂN LOẠI TOPIC] Close (Không cần thực hiện)
+
+
+───────────────────────────────────────────────────────────────
+TASK 13: Excel to Hangul to PDF Conversion
+───────────────────────────────────────────────────────────────
+
+Requirement: How about allowing Excel on the web to be saved as Hangul and then 
+            converted to PDF?
+Note: The Hangul version explains how to do this, and Chat will guide you.
+
+[TIẾNG VIỆT]
+13. Chuyển đổi Excel sang Hangul sang PDF
+    Yêu cầu: Làm thế nào về việc cho phép Excel trên web được lưu dưới dạng Hangul và sau đó 
+            chuyển đổi sang PDF?
+    Ghi chú: Phiên bản Hangul giải thích cách làm điều này, và Chat sẽ hướng dẫn bạn.
+
+[PHÂN LOẠI TOPIC] Other Tasks
+
+
+───────────────────────────────────────────────────────────────
+TASK 14: Admin Enhancements - Baedal Minjok Style
+───────────────────────────────────────────────────────────────
+
+Requirements:
+- Free users should be automatically sorted and a message sent the day before each day
+- Payments should also be automatically generated and emailed five days before
+- Regional agency setup
+- Three-digit number of agencies
+- Agency-style administration (as you've already figured out)
+
+[TIẾNG VIỆT]
+14. Nâng cấp Admin - Phong cách Baedal Minjok
+    Yêu cầu:
+    - Người dùng miễn phí nên được tự động sắp xếp và gửi tin nhắn một ngày trước mỗi ngày
+    - Thanh toán cũng nên được tự động tạo và gửi email năm ngày trước
+    - Thiết lập đại lý khu vực
+    - Số đại lý ba chữ số
+    - Quản trị theo phong cách đại lý (như bạn đã tìm ra)
+
+[PHÂN LOẠI TOPIC] Topic 2: Admin Enhancements
+
+
+───────────────────────────────────────────────────────────────
+TASK 15: Database Collection Function
+───────────────────────────────────────────────────────────────
+
+Requirement: Preparation for the introduction of generative AI requires the collection 
+            of a database, so the database collection function must be implemented 
+            at this time.
+
+[TIẾNG VIỆT]
+15. Chức năng thu thập cơ sở dữ liệu
+    Yêu cầu: Chuẩn bị cho việc giới thiệu generative AI yêu cầu thu thập 
+            cơ sở dữ liệu, vì vậy chức năng thu thập cơ sở dữ liệu phải được triển khai 
+            vào lúc này.
+
+[PHÂN LOẠI TOPIC] Other Tasks
+
+
+───────────────────────────────────────────────────────────────
+TASK 16: Database Tagging & Statistical Analysis
+───────────────────────────────────────────────────────────────
+
+Requirement: During database collection, each table is tagged with numbers and proper nouns, 
+            so statistical analysis is performed to actively utilize these tags.
+
+Collection Criteria:
+- By region
+- By inspection company
+- By building name
+- By equipment name
+- By inspection results
+- By machine manufacturer
+- etc.
+
+Purpose: So that it can be later generated using generative AI.
+
+[TIẾNG VIỆT]
+16. Gắn thẻ cơ sở dữ liệu & Phân tích thống kê
+    Yêu cầu: Trong quá trình thu thập cơ sở dữ liệu, mỗi bảng được gắn thẻ bằng số và danh từ riêng, 
+            để phân tích thống kê được thực hiện để tích cực sử dụng các thẻ này.
+    
+    Tiêu chí thu thập:
+    - Theo khu vực
+    - Theo công ty kiểm tra
+    - Theo tên tòa nhà
+    - Theo tên thiết bị
+    - Theo kết quả kiểm tra
+    - Theo nhà sản xuất máy
+    - v.v.
+    
+    Mục đích: Để sau này có thể được tạo bằng generative AI.
+
+[PHÂN LOẠI TOPIC] Other Tasks
+
+
+───────────────────────────────────────────────────────────────
+TASK 17: Database Storage
+───────────────────────────────────────────────────────────────
+
+Requirement: The database should be stored in AWS's own server, collecting all inspection data.
+
+[TIẾNG VIỆT]
+17. Lưu trữ cơ sở dữ liệu
+    Yêu cầu: Cơ sở dữ liệu nên được lưu trữ trên máy chủ riêng của AWS, thu thập tất cả dữ liệu kiểm tra.
+
+[PHÂN LOẠI TOPIC] Other Tasks
+
+
+───────────────────────────────────────────────────────────────
+TASK 18: Construction Sequence
+───────────────────────────────────────────────────────────────
+
+Requirement: The construction sequence for this step:
+           1. Resolve the building's basement network issue
+           2. Insert equation
+           3. Re-adjust the admin
+
+[TIẾNG VIỆT]
+18. Trình tự xây dựng
+    Yêu cầu: Trình tự xây dựng cho bước này:
+            1. Giải quyết vấn đề mạng tầng hầm tòa nhà
+            2. Chèn phương trình
+            3. Điều chỉnh lại admin
+
+[PHÂN LOẠI TOPIC] Topic 3: Formula/Graph & Missing Features
+
+
+───────────────────────────────────────────────────────────────
+TASK 19: November 3rd Incident Process
+───────────────────────────────────────────────────────────────
+
+Requirement: Please provide detailed instructions for the process for the incident 
+            on November 3rd, and what to do if this happens again.
+Note: Please provide instructions for the process.
+
+[TIẾNG VIỆT]
+19. Quy trình sự cố ngày 3 tháng 11
+    Yêu cầu: Vui lòng cung cấp hướng dẫn chi tiết cho quy trình xử lý sự cố 
+            ngày 3 tháng 11, và phải làm gì nếu điều này xảy ra lại.
+    Ghi chú: Vui lòng cung cấp hướng dẫn cho quy trình.
+
+[PHÂN LOẠI TOPIC] Close (Không cần thực hiện)
+
+
+───────────────────────────────────────────────────────────────
+TASK 20: Pop-up Management
+───────────────────────────────────────────────────────────────
+
+Requirement: How to edit and delete or change pop-ups at https://bluementor.lsmk.kr
+Note: Please let me know
+
+[TIẾNG VIỆT]
+20. Quản lý pop-up
+    Yêu cầu: Làm thế nào để chỉnh sửa và xóa hoặc thay đổi pop-up tại https://bluementor.lsmk.kr
+    Ghi chú: Vui lòng cho tôi biết
+
+[PHÂN LOẠI TOPIC] Topic 2: Admin Enhancements
+
+
+───────────────────────────────────────────────────────────────
+TASK 21: Admin Mode (Recommend a good solution, preferably a delivery app)
+───────────────────────────────────────────────────────────────
+
+A. Employee Management
+   - Function to add and subtract from the number of employees
+   - Remove previously registered employees who left the company
+
+B. Employee Information Management
+   - For each company's employee information management, the ID and phone number 
+     (if the phone number is incorrect, the system will not work) must match to use 
+     the paid/free service
+   - If the user's new phone number is updated, the system will continue with the new number
+
+C. Monthly Employee Count/Payment
+   - Monthly employee count/payment from the start date to the end of each month
+   - If 30 days are not enough, the first month will be calculated based on the number of days
+   - Payment function - End of each month
+
+D. User Price Adjustment Function
+   - Required for email invoices
+   - Five days before the end of each month, a bill is automatically generated and sent to:
+     * Registered email address
+     * Social media
+     * Company's main phone number
+
+E. Free Period Notification & Conversion
+   - Notification one day prior to the end of the free period (a separate message will be sent)
+   - Subsequently, a paid conversion function – individual or all numbers assigned to each company
+
+F. Company Inspection Building Information
+   - Information on each company's inspection building
+   - Function to collect all inspection databases for that company
+   - Assignment to a dealership, attribution function, or sole ownership
+
+G. Payment Failure Handling
+   - Immediate access blocking when an inspection company fails to pay
+
+H. Free User Restrictions
+   - Web printing restrictions and DB touch functionality for free users
+
+I. Inspector Registration by Dealership
+   - Operation will begin after inspectors are registered by dealership (1, 2, 3, 4, 5, etc.)
+   - Settlement system established
+
+J. Operation Status by Dealership
+   - Operation status by dealership
+
+K. Operation Based on Worker Phone Numbers
+   - Operation will be based on individual worker phone numbers
+
+L. Free Version Watermark
+   - Free (app)/(web) versions will print the text "(sample)" as a watermark when printing
+
+M. Paid Service Watermark Removal
+   - Paid services will remove the watermark when printing from the web
+   - In other words, paid services will remove the "(sample)" text when printing
+   - This content can be directly designated as paid/free/unprintable in LSMK admin mode
+
+N. Monthly Worker Count
+   - Monthly number of workers per company/agency
+
+O. Free/Paid User Distinction & Notification
+   - Free/paid user distinction and notification function by subscriber phone number
+   - Sort notification content so the administrator can send it in bulk
+
+[TIẾNG VIỆT]
+21. Chế độ Admin (Đề xuất giải pháp tốt, tốt nhất là ứng dụng giao hàng)
+
+    A. Quản lý nhân viên
+       - Chức năng thêm và trừ số lượng nhân viên
+       - Xóa nhân viên đã đăng ký trước đó đã rời công ty
+    
+    B. Quản lý thông tin nhân viên
+       - Đối với quản lý thông tin nhân viên của mỗi công ty, ID và số điện thoại 
+         (nếu số điện thoại không đúng, hệ thống sẽ không hoạt động) phải khớp để sử dụng 
+         dịch vụ trả phí/miễn phí
+       - Nếu số điện thoại mới của người dùng được cập nhật, hệ thống sẽ tiếp tục với số mới
+    
+    C. Số lượng/Thanh toán nhân viên hàng tháng
+       - Số lượng/thanh toán nhân viên hàng tháng từ ngày bắt đầu đến cuối mỗi tháng
+       - Nếu 30 ngày không đủ, tháng đầu tiên sẽ được tính dựa trên số ngày
+       - Chức năng thanh toán - Cuối mỗi tháng
+    
+    D. Chức năng điều chỉnh giá người dùng
+       - Cần thiết cho hóa đơn email
+       - Năm ngày trước cuối mỗi tháng, hóa đơn được tự động tạo và gửi đến:
+         * Địa chỉ email đã đăng ký
+         * Mạng xã hội
+         * Số điện thoại chính của công ty
+    
+    E. Thông báo & Chuyển đổi thời kỳ miễn phí
+       - Thông báo một ngày trước khi kết thúc thời kỳ miễn phí (một tin nhắn riêng sẽ được gửi)
+       - Sau đó, chức năng chuyển đổi trả phí – cá nhân hoặc tất cả số được gán cho mỗi công ty
+    
+    F. Thông tin tòa nhà kiểm tra của công ty
+       - Thông tin về tòa nhà kiểm tra của mỗi công ty
+       - Chức năng thu thập tất cả cơ sở dữ liệu kiểm tra cho công ty đó
+       - Gán cho đại lý, chức năng quy kết, hoặc quyền sở hữu duy nhất
+    
+    G. Xử lý lỗi thanh toán
+       - Chặn truy cập ngay lập tức khi công ty kiểm tra không thanh toán
+    
+    H. Hạn chế người dùng miễn phí
+       - Hạn chế in web và chức năng chạm DB cho người dùng miễn phí
+    
+    I. Đăng ký thanh tra viên theo đại lý
+       - Hoạt động sẽ bắt đầu sau khi thanh tra viên được đăng ký theo đại lý (1, 2, 3, 4, 5, v.v.)
+       - Hệ thống thanh toán được thiết lập
+    
+    J. Trạng thái hoạt động theo đại lý
+       - Trạng thái hoạt động theo đại lý
+    
+    K. Hoạt động dựa trên số điện thoại công nhân
+       - Hoạt động sẽ dựa trên số điện thoại công nhân cá nhân
+    
+    L. Watermark phiên bản miễn phí
+       - Phiên bản miễn phí (app)/(web) sẽ in văn bản "(sample)" như một watermark khi in
+    
+    M. Xóa watermark dịch vụ trả phí
+       - Dịch vụ trả phí sẽ xóa watermark khi in từ web
+       - Nói cách khác, dịch vụ trả phí sẽ xóa văn bản "(sample)" khi in
+       - Nội dung này có thể được chỉ định trực tiếp là trả phí/miễn phí/không thể in trong chế độ admin LSMK
+    
+    N. Số lượng công nhân hàng tháng
+       - Số lượng công nhân hàng tháng mỗi công ty/đại lý
+    
+    O. Phân biệt & Thông báo người dùng miễn phí/trả phí
+       - Phân biệt người dùng miễn phí/trả phí và chức năng thông báo theo số điện thoại thuê bao
+       - Sắp xếp nội dung thông báo để quản trị viên có thể gửi hàng loạt
+
+[PHÂN LOẠI TOPIC] Topic 2: Admin Enhancements
+
+
+───────────────────────────────────────────────────────────────
+TASK 22: Service Crashing Issue
+───────────────────────────────────────────────────────────────
+
+Issue: Service crashing every three months
+Question: How do you resolve the issue of the service crashing every three months? 
+         Please tell me.
+
+[TIẾNG VIỆT]
+22. Vấn đề sự cố dịch vụ
+    Vấn đề: Dịch vụ bị sự cố mỗi ba tháng
+    Câu hỏi: Làm thế nào bạn giải quyết vấn đề dịch vụ bị sự cố mỗi ba tháng? 
+             Vui lòng cho tôi biết.
+
+[PHÂN LOẠI TOPIC] Close (Không cần thực hiện)
+
+
+───────────────────────────────────────────────────────────────
+TASK 23: Generative AI Introduction
+───────────────────────────────────────────────────────────────
+
+Note: Generative AI will be introduced later.
+
+[TIẾNG VIỆT]
+23. Giới thiệu Generative AI
+    Ghi chú: Generative AI sẽ được giới thiệu sau.
+
+[PHÂN LOẠI TOPIC] Other Tasks
+
+
+═══════════════════════════════════════════════════════════════
+TÓM TẮT PHÂN LOẠI TOPIC
+═══════════════════════════════════════════════════════════════
+
+Topic 1: Offline Functionality (1 task)
+  - Task 6: Deep Underground Areas - Network Unavailable
+
+Topic 2: Admin Enhancements (5 tasks)
+  - Task 8: Personalized Page Configuration
+  - Task 9: Worker Information Management
+  - Task 14: Admin Enhancements - Baedal Minjok Style
+  - Task 20: Pop-up Management
+  - Task 21: Admin Mode (15 sub-items)
+
+Topic 3: Formula/Graph & Missing Features (3 tasks)
+  - Task 4: Refrigerator Types
+  - Task 5: Boiler Types
+  - Task 18: Construction Sequence (includes formula/graph)
+
+Other Tasks (7 tasks)
+  - Task 1: Quantity Display Issue
+  - Task 2: Photography - Continuous Shooting
+  - Task 3: Hot Water Supply Systems (Note: Khách bảo sẽ check lại, hiện tại sẽ không làm)
+  - Task 10: Advertisement Space
+  - Task 13: Excel to Hangul to PDF Conversion
+  - Task 15: Database Collection Function
+  - Task 16: Database Tagging & Statistical Analysis
+  - Task 17: Database Storage
+  - Task 23: Generative AI Introduction
+
+Close - Không cần thực hiện (5 tasks)
+  - Task 7: Inspection Advice Text Comparison
+  - Task 11: BM/SBM Separation
+  - Task 12: Free/Paid Policy
+  - Task 19: November 3rd Incident Process
+  - Task 22: Service Crashing Issue
+
+Total: 23 tasks
+  - Topic 1: 1 task
+  - Topic 2: 5 tasks
+  - Topic 3: 3 tasks
+  - Other Tasks: 7 tasks
+  - Close: 5 tasks
+
+
+═══════════════════════════════════════════════════════════════
+END OF DOCUMENT
+═══════════════════════════════════════════════════════════════

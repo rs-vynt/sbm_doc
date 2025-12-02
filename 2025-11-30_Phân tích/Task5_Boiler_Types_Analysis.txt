@@ -1,0 +1,185 @@
+═══════════════════════════════════════════════════════════════
+PHÂN TÍCH TASK 5: BOILER TYPES
+═══════════════════════════════════════════════════════════════
+
+Document: 2025-11-29-released for_VT RnD team (English)
+Analysis Date: 2025-11-30
+Source Code Location (liên quan):
+- Web: Sources\bm-web (Excel export, report templates)
+- Backend: Sources\bm-backend (template & report models)
+
+═══════════════════════════════════════════════════════════════
+PHẦN TỔNG HỢP
+═══════════════════════════════════════════════════════════════
+
+1. NỘI DUNG TASK
+───────────────────────────────────────────────────────────────
+
+Yêu cầu (task gốc):
+- Distinguish the types of boilers
+- Reference: Explanation based on Korea Electric Test data
+- Feature: Automatic multiplication of subcategories
+
+Hiểu theo ngữ cảnh SBM/BM:
+- Hệ thống đã có loại thiết bị `보일러` và `캐스케이드 보일러` trong `excel.ts`.
+- Task này yêu cầu:
+  - Phân loại rõ các loại boiler (theo chuẩn Korea Electric Test data).
+  - Thêm logic “automatic multiplication of subcategories” (tự động nhân/tính toán theo phân nhóm).
+  - Khả năng cao liên quan đến công thức (formula) trong Excel/report.
+
+2. PHẠM VI (SCOPE)
+───────────────────────────────────────────────────────────────
+
+A. Phần Web & Reporting
+- Cập nhật cấu hình Excel/report cho `보일러` và `캐스케이드 보일러`.
+- Thêm/điều chỉnh các công thức tính toán để tự động nhân/tổng hợp theo subcategories.
+- Hiển thị rõ loại boiler + subcategory trong UI & report (nếu cần).
+
+B. Phần Backend
+- Bổ sung metadata/sub-type cho boiler trong DB (nếu chưa có).
+- Đảm bảo dữ liệu subcategory được lưu và dùng cho report/export.
+
+C. Phần App
+- Có thể chỉ cần chọn loại boiler + subcategory khi tạo thiết bị/inspection.
+- Chưa thấy yêu cầu gì đặc biệt về mobile logic ngoài phần cấu hình.
+
+3. FEASIBILITY - CÓ LÀM ĐƯỢC KHÔNG?
+───────────────────────────────────────────────────────────────
+
+✅ CÓ THỂ LÀM ĐƯỢC - Độ khó: TRUNG BÌNH
+
+Lý do:
+- Web đã có cấu hình chi tiết cho `보일러` và `캐스케이드 보일러` trong `excel.ts`.
+- Excel export đã có utilities `updateFormula` để xử lý công thức khi copy template.
+- Backend đã có model Template/Value (TemplateValue, ItemValue) để mô tả các giá trị/subcategory.
+
+Thách thức:
+- Cần hiểu rõ định nghĩa “automatic multiplication of subcategories” (nhân cái gì với cái gì? công thức cụ thể?).
+- Phụ thuộc nhiều vào Korea Electric Test data (business spec chi tiết).
+- Nếu công thức phức tạp (nhiều cấp subcategory, nhiều tham số) → effort cao hơn.
+
+4. ESTIMATE THỜI GIAN (Ước tính với Cursor hỗ trợ)
+───────────────────────────────────────────────────────────────
+
+Giả định:
+- Subcategories là các nhóm con trong form boiler (vd: loại tải, khu vực, stage…).
+- Automatic multiplication = tự động tính tổng/tích/lũy các giá trị theo từng subcategory, sau đó tổng hợp.
+
+A. PHÂN TÍCH & DESIGN (≈ 6 giờ)
+- Đọc kỹ spec từ Korea Electric Test data                           │ 2 giờ
+- Review code web: `excel.ts`, `excelExportUtils.ts`, templateImg*  │ 2 giờ
+- Thiết kế công thức/subcategory model (data model + vị trí cell)   │ 2 giờ
+
+B. CODING (Web + Backend) (≈ 12–14 giờ)
+- Backend:
+  - Thêm subcategory field/enum cho boiler (nếu cần)                 │ 2 giờ
+  - Đảm bảo API trả đúng data (boiler + subcategories) cho report   │ 2 giờ
+- Web:
+  - Cập nhật `excel.ts` cho `보일러` & `캐스케이드 보일러`            │ 3 giờ
+  - Thêm/điều chỉnh `calculateInfoArr` & công thức liên quan         │ 3 giờ
+  - (Optional) UI chọn subcategory trong web/app                     │ 2–4 giờ
+
+C. TESTING (≈ 6–7 giờ)
+- Unit test cho calculation logic (nếu implement thêm JS logic)     │ 2 giờ
+- Manual test với nhiều combinations subcategory                    │ 3 giờ
+- Export Excel/PDF và đối chiếu với kết quả tính tay/Korea data     │ 1–2 giờ
+
+D. RELEASE PREPARATION (≈ 2–3 giờ)
+- Fix bug nhỏ sau test                                               │ 1 giờ
+- Cập nhật tài liệu nội bộ (cách dùng subcategories)                │ 1 giờ
+- Triển khai & smoke test                                            │ 0.5–1 giờ
+
+TỔNG CỘNG (với Cursor): **~26–30 giờ ≈ 3–4 ngày làm việc**  
+TỔNG CỘNG (không Cursor): **~34–40 giờ ≈ 4–5 ngày làm việc**
+
+═══════════════════════════════════════════════════════════════
+PHÂN TÍCH KỸ THUẬT & IMPLEMENTATION
+═══════════════════════════════════════════════════════════════
+
+1. HIỆN TRẠNG LIÊN QUAN
+───────────────────────────────────────────────────────────────
+
+A. Web – Excel/Report Config
+- `excel.ts` có entries cho:
+  - `보일러`
+  - `캐스케이드 보일러`
+- Mỗi loại có:
+  - `dataStartArr`, `dataInspectionArr`, `pageBreakArr`, `pageBreakSbmArr`.
+- Một số thiết bị khác có `calculateInfoArr` dùng để áp dụng công thức (formula) cho vùng data.
+
+B. Web – Formula Utilities
+- `excelExportUtils.ts` có hàm:
+  - `updateFormula(formula, colOffset)`:
+    * Cập nhật reference cột trong Excel formula khi copy template.
+    * Cho phép clone công thức cho nhiều column mà không chỉnh tay từng cell.
+
+C. Backend – Template/Value
+- `TemplateValue` model:
+  - `value_type`, `unit`… có thể dùng để định nghĩa subcategory.
+- Có thể đã có quan hệ giữa template item và các giá trị boiler khác nhau.
+
+2. ĐỀ XUẤT KIẾN TRÚC & CÁCH LÀM
+───────────────────────────────────────────────────────────────
+
+Ý tưởng chính:
+- Mỗi boiler có một số subcategories (vd: loại tải, loại fuel, mode vận hành…).
+- Mỗi subcategory có các giá trị đo lường riêng (temperature, pressure, efficiency…).
+- Automatic multiplication of subcategories có thể hiểu là:
+  - Tự động tính toán tổng/tích/tỉ lệ dựa trên các subcategory.
+
+A. Bước 1 – Làm rõ business rule
+- Làm việc với client (hoặc xem Korea Electric Test data) để xác định:
+  - Danh sách subcategories cụ thể.
+  - Công thức chính xác (tổng, trung bình, nhân, tỉ lệ, v.v.).
+
+B. Bước 2 – Model subcategories
+- Backend:
+  - Thêm cấu trúc cho subcategory trong template/value:
+    * Ví dụ: `TemplateValue.value_type = 'BOILER_SUBTYPE_X'`.
+  - Đảm bảo ItemValue lưu giá trị theo từng subcategory.
+- Web:
+  - Mapping các subcategory vào vùng cells trong Excel.
+  - Sử dụng `calculateInfoArr` để chỉ định vùng áp dụng formula.
+
+C. Bước 3 – Implement automatic multiplication
+- Trong Excel template (file gốc):
+  - Đặt sẵn công thức mẫu trong master cell.
+- Trong code export:
+  - Dùng `updateFormula` để nhân công thức cho từng cột/subcategory.
+  - Đảm bảo offset cột đúng với layout hiện tại.
+
+3. RỦI RO & LƯU Ý
+───────────────────────────────────────────────────────────────
+
+Rủi ro:
+- Business rule không rõ → dễ làm sai mong đợi.
+- Phụ thuộc chặt vào Excel layout (nếu template đổi, code cũng phải đổi theo).
+
+Mitigation:
+- Document rõ:
+  - Vị trí cell cho từng subcategory.
+  - Công thức chính xác.
+- Viết test nhỏ (JS) để verify logic cập nhật formula.
+- Giữ tất cả config vị trí cell/công thức trong 1 nơi (vd: `excel.ts`) để dễ bảo trì.
+
+4. TESTING STRATEGY (GỌN)
+───────────────────────────────────────────────────────────────
+
+- Tạo 2–3 bộ dữ liệu mẫu cho boiler với nhiều subcategories.
+- Tính tay kết quả (theo Korea Electric Test data).
+- Xuất Excel từ hệ thống, so sánh kết quả với tính tay.
+
+5. KẾT LUẬN & RECOMMENDATION
+───────────────────────────────────────────────────────────────
+
+- Feasibility: ✅ Có thể làm được, nhưng cần business spec chi tiết.
+- Effort (với Cursor): 3–4 ngày.
+- Recommendation:
+  - Trước khi code: cần 1 buổi chốt công thức/subcategory chi tiết với khách.
+  - Sau khi chốt: implement theo hướng cấu hình (excel.ts + template) để dễ maintain.
+
+═══════════════════════════════════════════════════════════════
+END OF DOCUMENT
+═══════════════════════════════════════════════════════════════
+
+

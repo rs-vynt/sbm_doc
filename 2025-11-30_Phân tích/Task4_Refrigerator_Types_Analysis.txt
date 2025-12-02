@@ -1,0 +1,222 @@
+═══════════════════════════════════════════════════════════════
+PHÂN TÍCH TASK 4: REFRIGERATOR TYPES
+═══════════════════════════════════════════════════════════════
+
+Document: 2025-11-29-released for_VT RnD team (English)
+Analysis Date: 2025-11-30
+Source Code Location (liên quan):
+- Web: Sources\bm-web (Excel export, report templates)
+- Backend: Sources\bm-backend (template & report models)
+
+═══════════════════════════════════════════════════════════════
+PHẦN TỔNG HỢP
+═══════════════════════════════════════════════════════════════
+
+1. NỘI DUNG TASK
+───────────────────────────────────────────────────────────────
+
+Yêu cầu (task gốc):
+- Distinguish the types of refrigerators
+- Types (4 loại):
+  1) Medium-temperature absorption
+  2) Direct-fired absorption
+  3) Turbo
+  4) Screw
+- Note: The format remains the same.
+
+Hiểu theo ngữ cảnh SBM/BM:
+- Trong hệ thống hiện tại đã có loại thiết bị "냉동기" (chiller/refrigerator) và các template Excel/report tương ứng.
+- Task này chủ yếu là:
+  - Tách rõ các loại chiller/refrigerator theo 4 loại nêu trên.
+  - Đảm bảo UI, backend, và report (đặc biệt là Excel/Hangul) thể hiện đúng loại.
+  - Không thay đổi hoàn toàn format hiện có, mà mở rộng/điều chỉnh nhẹ để support phân loại.
+
+2. PHẠM VI (SCOPE)
+───────────────────────────────────────────────────────────────
+
+A. Phần Web & Reporting (chính)
+- Cập nhật cấu hình Excel/report để phân biệt 4 loại refrigerator.
+- Đảm bảo các công thức (formula) và graph (nếu có) vẫn hoạt động đúng cho từng loại.
+- Mapping giữa loại thiết bị trong DB và template/report tương ứng.
+
+B. Phần Backend
+- Nếu hiện tại chỉ có 1 loại "냉동기" trong template/report config:
+  - Cần bổ sung field/enum để phân biệt sub-type:
+    * MEDIUM_TEMP_ABSORPTION
+    * DIRECT_FIRED_ABSORPTION
+    * TURBO
+    * SCREW
+  - Đảm bảo logic chọn template/report dựa trên sub-type (nếu cần).
+
+C. Phần App (Mobile)
+- Có thể chỉ cần hiển thị đúng loại trong UI (dropdown/select).
+- Không yêu cầu logic offline/online phức tạp riêng cho task này.
+
+3. FEASIBILITY - CÓ LÀM ĐƯỢC KHÔNG?
+───────────────────────────────────────────────────────────────
+
+✅ CÓ THỂ LÀM ĐƯỢC - Độ khó: THẤP → TRUNG BÌNH
+
+Lý do:
+- Hệ thống đã có phân loại thiết bị "냉동기", "보일러"... trong `Sources\bm-web\src\constants\excel.ts`.
+- Excel export đã support các cấu trúc như `dataStartArr`, `dataInspectionArr`, `pageBreakArr`, `calculateInfoArr`.
+- Backend đã có bảng template/report cho thiết bị (TemplateTarget, TemplateItem, TemplateValue).
+- Task này chủ yếu là mở rộng cấu hình + thêm enum/sub-type, không phải thay đổi kiến trúc lớn.
+
+Thách thức:
+- Cần hiểu rõ business rule cho từng loại refrigerator (nếu format hoặc công thức khác nhau).
+- Đảm bảo backward compatibility với dữ liệu/report cũ (dữ liệu cũ không có subtype sẽ map thế nào).
+- Nếu mỗi loại cần công thức/graph riêng → effort tăng.
+
+4. ESTIMATE THỜI GIAN (Ước tính với Cursor hỗ trợ)
+───────────────────────────────────────────────────────────────
+
+Giả định:
+- Format tổng thể "the format remains the same" ⇒ không thiết kế lại toàn bộ template, chủ yếu mapping & hiển thị.
+- Mỗi loại refrigerator dùng cùng 1 template, chỉ khác label/bộ câu hỏi nhỏ.
+
+A. PHÂN TÍCH & DESIGN (≈ 4 giờ)
+- Đọc requirements chi tiết từ client (email/document gốc)            │ 1 giờ
+- Review code web: `excel.ts`, template mapping, export flow          │ 1 giờ
+- Review backend: template/report models liên quan                    │ 1 giờ
+- Design cách lưu sub-type (enum/field mới hoặc reuse field có sẵn)   │ 1 giờ
+
+B. CODING (Web + Backend) (≈ 10–12 giờ)
+- Backend:
+  - Thêm enum/field cho loại refrigerator (4 sub-types)               │ 2 giờ
+  - Cập nhật API create/update template/device                         │ 2 giờ
+- Web:
+  - Cập nhật `excel.ts` để support phân loại (labels/subtype field)   │ 2 giờ
+  - Cập nhật UI (dropdown/select cho loại) nếu cần                     │ 2 giờ
+  - Đảm bảo xuất đúng loại vào report/Excel                            │ 2–4 giờ
+
+C. TESTING (≈ 4–5 giờ)
+- Unit test cơ bản cho mapping backend                                │ 1 giờ
+- Manual test trên web UI (tạo inspection với 4 loại khác nhau)       │ 2 giờ
+- Export report/Excel và kiểm tra hiển thị                            │ 1–2 giờ
+
+D. RELEASE PREPARATION (≈ 2–3 giờ)
+- Fix bug nhỏ sau test                                                 │ 1 giờ
+- Cập nhật documentation nội bộ (cách chọn & map subtype)             │ 1 giờ
+- Triển khai lên môi trường test/staging                              │ 0.5–1 giờ
+
+TỔNG CỘNG (với Cursor): **~20–24 giờ ≈ 2–3 ngày làm việc**  
+TỔNG CỘNG (không Cursor): **~28–32 giờ ≈ 3–4 ngày làm việc**
+
+═══════════════════════════════════════════════════════════════
+PHÂN TÍCH KỸ THUẬT & IMPLEMENTATION
+═══════════════════════════════════════════════════════════════
+
+1. HIỆN TRẠNG LIÊN QUAN
+───────────────────────────────────────────────────────────────
+
+A. Web – Excel/Report Config
+- File: `Sources/bm-web/src/constants/excel.ts`
+  - Đã có cấu hình cho:
+    * `냉동기` (chiller/refrigerator)
+    * `보일러` (boiler)
+    * `캐스케이드 보일러`, `열교환기`, ...
+  - Mỗi loại có:
+    * `dataStartArr`, `dataInspectionArr`, `pageBreakArr`, `pageBreakSbmArr`
+    * `calculateInfoArr` (nơi áp dụng formula trên từng vùng)
+
+- File: `Sources/bm-web/src/utils/excelExport/excelExportUtils.ts`
+  - Hàm `updateFormula(formula, colOffset)` dùng regex để dịch chuyển cột trong Excel formulas.
+  - Cho phép copy/mở rộng công thức tự động khi nhân template.
+
+B. Backend – Template & Report
+- Bảng `template_value` (model `TemplateValue`) có:
+  - `template_item_id`, `value_type`, `unit`… dùng để mô tả kiểu giá trị/đơn vị.
+- Các utils/report khác dùng tên thiết bị bằng tiếng Hàn (`냉동기`, `보일러`, ...) để map template.
+
+Kết luận hiện trạng:
+- Hệ thống đã có khái niệm template theo loại thiết bị.
+- Task 4 chủ yếu là refinement/chi tiết hóa loại "냉동기" thành 4 sub-types + mapping ra report.
+
+2. ĐỀ XUẤT KIẾN TRÚC & CÁCH LÀM
+───────────────────────────────────────────────────────────────
+
+A. Mức tối thiểu (đơn giản, nhanh)
+- Không tạo 4 template hoàn toàn khác nhau.
+- Thêm field `refrigerator_subtype` (enum) cho thiết bị kiểu 냉동기:
+  - `MEDIUM_TEMP_ABSORPTION`
+  - `DIRECT_FIRED_ABSORPTION`
+  - `TURBO`
+  - `SCREW`
+- Trong UI/web:
+  - Khi chọn thiết bị loại 냉동기, hiển thị dropdown "Refrigerator Type".
+  - Lưu subtype vào DB (device/config table).
+- Trong report/Excel:
+  - Dùng cùng template, nhưng hiển thị subtype ở phần header/mô tả:
+    * Ví dụ: "냉동기 (Turbo)" thay vì chỉ "냉동기".
+
+B. Mức đầy đủ (nếu mỗi loại có tiêu chí khác nhau)
+- Tạo 4 template riêng trong DB cho 4 loại.
+- Mapping UI:
+  - Khi chọn subtype → map tới template tương ứng.
+- Excel/report:
+  - Tạo 4 config khác nhau (hoặc reuse 1 config với param subtype).
+
+Đề xuất thực tế (balance effort/value):
+- Bắt đầu với **mức tối thiểu** (1 template + subtype label).
+- Nếu sau này client yêu cầu form/graph khác nhau cho từng loại → mở rộng lên mức đầy đủ.
+
+3. CÁC BƯỚC IMPLEMENTATION CHÍNH
+───────────────────────────────────────────────────────────────
+
+Step 1 – Backend: Thêm subtype
+- Thêm column mới (nếu cần) cho bảng device hoặc template liên quan:
+  - `refrigerator_subtype` (string/enum).
+- Cập nhật API create/update device/template để nhận và lưu subtype.
+
+Step 2 – Web: UI & Form
+- Tìm màn hình cấu hình thiết bị/inspection cho 냉동기.
+- Thêm dropdown "Refrigerator Type" với 4 option.
+- Bind value vào field mới `refrigerator_subtype`.
+
+Step 3 – Web: Report/Excel
+- Update phần header/mô tả trong Excel export để in thêm subtype.
+- Nếu sau này mỗi subtype cần công thức khác nhau:
+  - Dùng `calculateInfoArr` và/hoặc nhiều block formula khác nhau theo subtype.
+
+Step 4 – Testing
+- Tạo 4 inspection khác nhau, mỗi cái chọn 1 subtype.
+- Xuất report/Excel, verify hiển thị đúng subtype và công thức không bị sai.
+
+4. RỦI RO & LƯU Ý
+───────────────────────────────────────────────────────────────
+
+Rủi ro:
+- Business rule chưa rõ: mỗi loại có khác nhau nhiều về logic không?
+- Backward compatibility: dữ liệu cũ (không có subtype) sẽ được hiểu là type nào?
+
+Mitigation:
+- Làm việc với client để chốt:
+  - Mặc định dữ liệu cũ: map vào subtype nào (vd: Medium-temperature absorption).
+  - Có cần phân tích lại/convert report cũ không.
+- Implement default subtype cho existing data, ví dụ:
+  - Nếu `refrigerator_subtype` NULL → treat as MEDIUM_TEMP_ABSORPTION.
+
+5. TESTING STRATEGY (GỌN)
+───────────────────────────────────────────────────────────────
+
+- Tạo mới thiết bị 냉동기 với từng subtype.
+- Chạy 1 inspection/report cho mỗi subtype.
+- Xuất Excel từ hệ thống, kiểm tra:
+  - Tên subtype hiển thị đúng.
+  - Công thức/graph (nếu có) vẫn chạy bình thường.
+
+6. KẾT LUẬN & RECOMMENDATION
+───────────────────────────────────────────────────────────────
+
+- Feasibility: ✅ Dễ, chủ yếu là UI + mapping + chút backend.
+- Effort (với Cursor): 2–3 ngày làm việc.
+- Recommendation:
+  - Bắt đầu với thiết kế đơn giản (1 template + subtype label).
+  - Chỉ mở rộng thành nhiều template riêng khi client yêu cầu rõ ràng.
+
+═══════════════════════════════════════════════════════════════
+END OF DOCUMENT
+═══════════════════════════════════════════════════════════════
+
+

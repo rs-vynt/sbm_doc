@@ -1,0 +1,84 @@
+═══════════════════════════════════════════════════════════════
+CLOSE TASKS (Không cần thực hiện)
+═══════════════════════════════════════════════════════════════
+
+Document: 2025-11-29-released for_VT RnD team (English)
+Grouped Date: 2025-11-30
+
+These tasks are marked as "Close" - không cần thực hiện. They may be questions, 
+documentation requests, or items that have been decided not to implement.
+
+
+═══════════════════════════════════════════════════════════════
+TASKS
+═══════════════════════════════════════════════════════════════
+
+───────────────────────────────────────────────────────────────
+TASK 7: Inspection Advice Text Comparison
+───────────────────────────────────────────────────────────────
+
+Requirement: Compare and confirm the SBM (app/web) inspection advice text and 
+            insert any missing items into each item.
+Status: Phase 1, insufficient; insufficient comparison.
+
+Category: Content & Data Verification
+
+───────────────────────────────────────────────────────────────
+TASK 11: Complete Separation of BM/SBM Operations
+───────────────────────────────────────────────────────────────
+
+Question: Complete separation of BM/SBM operations?
+Category: Architecture & System Design
+
+───────────────────────────────────────────────────────────────
+TASK 12: Free App, Paid Web Version Policy
+───────────────────────────────────────────────────────────────
+
+Question: What about a free app, paid web version policy? What are your thoughts?
+Category: Business Policy & Strategy
+
+───────────────────────────────────────────────────────────────
+TASK 19: November 3rd Incident Process
+───────────────────────────────────────────────────────────────
+
+Requirement: Please provide detailed instructions for the process for the incident 
+            on November 3rd, and what to do if this happens again.
+Note: Please provide instructions for the process.
+Category: Incident Management & Documentation
+
+───────────────────────────────────────────────────────────────
+TASK 22: Service Crashing Issue
+───────────────────────────────────────────────────────────────
+
+Issue: Service crashing every three months
+Question: How do you resolve the issue of the service crashing every three months? 
+         Please tell me.
+Category: Technical Issue & Stability
+
+
+═══════════════════════════════════════════════════════════════
+SUMMARY BY CATEGORY
+═══════════════════════════════════════════════════════════════
+
+Content & Data Verification: 1 task
+- Task 7: Inspection Advice Text Comparison
+
+Architecture & System Design: 1 task
+- Task 11: BM/SBM Separation
+
+Business Policy & Strategy: 1 task
+- Task 12: Free/Paid Policy
+
+Incident Management & Documentation: 1 task
+- Task 19: November 3rd Incident Process
+
+Technical Issue & Stability: 1 task
+- Task 22: Service Crashing
+
+Total: 5 tasks
+
+
+═══════════════════════════════════════════════════════════════
+END OF DOCUMENT
+═══════════════════════════════════════════════════════════════
+

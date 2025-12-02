@@ -1,0 +1,1070 @@
+═══════════════════════════════════════════════════════════════
+PHÂN TÍCH TASK 6: OFFLINE FUNCTIONALITY
+═══════════════════════════════════════════════════════════════
+
+Document: 2025-11-29-released for_VT RnD team (English)
+Analysis Date: 2025-11-30
+Source Code Location: Sources\bm-app
+Timeline Requirement: Maximum 1 Week
+
+
+═══════════════════════════════════════════════════════════════
+PHẦN TỔNG HỢP
+═══════════════════════════════════════════════════════════════
+
+1. NỘI DUNG TASK
+───────────────────────────────────────────────────────────────
+
+Yêu cầu: Cho phép BM/SBM ghi và lưu dữ liệu ngay cả ở những nơi không có kết nối mạng.
+         Khi mạng trở lại, tự động upload dữ liệu đã lưu.
+
+Phạm vi:
+- Lưu trữ dữ liệu inspection (text, số liệu, metadata) offline
+- Lưu trữ ảnh offline (đã có một phần)
+- Đồng bộ tự động khi có mạng
+- Dung lượng tối đa: 1 tuần dữ liệu
+- Quản lý hàng đợi (queue) với retry mechanism
+
+2. FEASIBILITY - CÓ LÀM ĐƯỢC KHÔNG?
+───────────────────────────────────────────────────────────────
+
+✅ CÓ THỂ LÀM ĐƯỢC - Độ khó: TRUNG BÌNH
+
+Lý do:
+- App đã có foundation tốt: offline photo queue (Hive-based)
+- Đã có connectivity_plus để detect network
+- Đã có Hive và sqflite có thể dùng cho local storage
+- Backend API đã có sẵn, chỉ cần mở rộng logic client-side
+- Có thể tái sử dụng pattern đã implement cho photos
+
+Thách thức:
+- Cần mở rộng từ chỉ photos sang toàn bộ inspection data
+- Cần xử lý conflict resolution khi sync
+- Cần quản lý storage limit (1 tuần)
+- Cần test kỹ các edge cases
+
+3. ESTIMATE THỜI GIAN (RUSH MODE - Core Features Only)
+───────────────────────────────────────────────────────────────
+
+ĐÁNH GIÁ THEO HƯỚNG RUSH (Tập trung vào core features, test tối thiểu):
+
+Scope Rush Mode:
+- ✅ Core components: OfflineInspectionQueue, OfflineInspectionService, BackgroundUploader extension
+- ✅ Integration vào inspection forms
+- ✅ Basic storage management (1 week limit)
+- ✅ Basic conflict resolution (server wins)
+- ❌ Bỏ UI Components (OfflineIndicator, QueueScreen, StorageWarning)
+- ❌ Bỏ LocalDataStore (backup & recovery)
+- ⚠️ Testing tối thiểu (chỉ critical paths, không comprehensive)
+
+Chi tiết estimate (RUSH MODE):
+
+┌─────────────────────────────────────────────────────────────┐
+│ PHÂN TÍCH & DESIGN (RUSH)                                 │
+├─────────────────────────────────────────────────────────────┤
+│ - Phân tích source code hiện tại (app + backend) │ 4 giờ   │
+│ - Phân tích OfflinePhotoQueue pattern (reuse)    │ 1 giờ   │
+│ - Design architecture mở rộng (đơn giản hóa)     │ 3 giờ   │
+│ - Design database schema (tương tự PhotoQueue)    │ 1 giờ   │
+│ - Design storage management (basic)              │ 1 giờ   │
+│ - Design conflict resolution (server wins)       │ 1 giờ   │
+│ Tổng: 11 giờ (1.4 ngày) - Giảm 13 giờ                    │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ CODING - CORE COMPONENTS                                    │
+├─────────────────────────────────────────────────────────────┤
+│ - OfflineInspectionQueue (mới, tương tự PhotoQueue)        │
+│   * Hive box structure và serialization         │ 4 giờ   │
+│   * Queue operations (enqueue, fetch, mark)    │ 4 giờ   │
+│   * Status management và retry logic            │ 3 giờ   │
+│   * Cleanup old data logic                      │ 2 giờ   │
+│   Tổng: 13 giờ                                             │
+│                                                             │
+│ - OfflineInspectionService (mới)                            │
+│   * Service wrapper cho submit logic            │ 3 giờ   │
+│   * Error handling và enqueue logic            │ 3 giờ   │
+│   * Status tracking và reporting                │ 2 giờ   │
+│   Tổng: 8 giờ                                              │
+│                                                             │
+│ - Mở rộng BackgroundUploader                                │
+│   * Thêm syncInspections() method               │ 4 giờ   │
+│   * Modify _tick() để handle cả 2 loại         │ 3 giờ   │
+│   * Conflict detection và resolution           │ 4 giờ   │
+│   * Error handling và retry cho inspections     │ 3 giờ   │
+│   Tổng: 14 giờ                                             │
+│                                                             │
+│ - LocalDataStore: ❌ BỎ (Optional - không cần trong rush) │
+│                                                             │
+│ Tổng Core Components: 35 giờ (4.4 ngày) - Giảm 7 giờ    │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ CODING - INTEGRATION & MODIFICATIONS                        │
+├─────────────────────────────────────────────────────────────┤
+│ - Modify inspection.dart::_onSubmit()                        │
+│   * Integrate OfflineInspectionService          │ 3 giờ   │
+│   * Error handling và user feedback            │ 2 giờ   │
+│   * Testing integration                        │ 2 giờ   │
+│   Tổng: 7 giờ                                              │
+│                                                             │
+│ - Modify sub_inspection.dart (tương tự)                    │
+│   * Similar integration                        │ 5 giờ   │
+│   Tổng: 5 giờ                                              │
+│                                                             │
+│ - Storage Management Implementation                         │
+│   * 1 week limit calculation                  │ 2 giờ   │
+│   * Auto-cleanup logic                        │ 3 giờ   │
+│   * Storage warning system                    │ 2 giờ   │
+│   Tổng: 7 giờ                                              │
+│                                                             │
+│ Tổng Integration: 19 giờ (2.4 ngày)                       │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ CODING - UI COMPONENTS: ❌ BỎ (RUSH MODE)                  │
+├─────────────────────────────────────────────────────────────┤
+│ - OfflineIndicator: ❌ BỎ                                  │
+│ - OfflineQueueScreen: ❌ BỎ                                 │
+│ - StorageWarning: ❌ BỎ                                    │
+│                                                             │
+│ Tổng UI Components: 0 giờ - Giảm 16 giờ                   │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ TESTING (RUSH - Tối thiểu, chỉ critical paths)             │
+├─────────────────────────────────────────────────────────────┤
+│ - Unit Tests (Basic only)                                   │
+│   * OfflineInspectionQueue core operations      │ 3 giờ   │
+│   * OfflineInspectionService basic logic        │ 2 giờ   │
+│   Tổng: 5 giờ - Giảm 10 giờ                                │
+│                                                             │
+│ - Integration Tests (Critical flows only)                   │
+│   * Submit → Fail → Enqueue → Sync flow        │ 3 giờ   │
+│   * Basic sync với network on/off              │ 2 giờ   │
+│   Tổng: 5 giờ - Giảm 7 giờ                                 │
+│                                                             │
+│ - Manual Testing (Essential scenarios only)                 │
+│   * Airplane mode testing                      │ 2 giờ   │
+│   * Basic offline → online sync                │ 2 giờ   │
+│   Tổng: 4 giờ - Giảm 9 giờ                                  │
+│                                                             │
+│ - Edge Cases: ❌ BỎ (test sau khi release)                  │
+│                                                             │
+│ Tổng Testing: 14 giờ (1.75 ngày) - Giảm 34 giờ            │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ RELEASE PREPARATION (RUSH)                                 │
+├─────────────────────────────────────────────────────────────┤
+│ - Bug fixes từ testing (ước tính ít bugs hơn)   │ 4 giờ   │
+│ - Code review cơ bản                          │ 2 giờ   │
+│ - Documentation tối thiểu (code comments)       │ 2 giờ   │
+│ - Deployment preparation                       │ 1 giờ   │
+│ - Final smoke test                             │ 1 giờ   │
+│ Tổng: 10 giờ (1.25 ngày) - Giảm 12 giờ                    │
+└─────────────────────────────────────────────────────────────┘
+
+TỔNG CỘNG RUSH MODE (Không có Cursor): 79 giờ ≈ 9.9 ngày làm việc
+
+Với Cursor hỗ trợ (code generation, suggestions, auto-complete):
+- Giảm 30-40% thời gian coding:
+  * Core Components: 35 giờ → ~24 giờ (giảm 11 giờ)
+  * Integration: 19 giờ → ~13 giờ (giảm 6 giờ)
+  * Tổng giảm coding: ~17 giờ
+- Giảm 10-15% thời gian testing (do code quality tốt hơn):
+  * Testing: 14 giờ → ~12 giờ (giảm 2 giờ)
+- Tổng giảm: ~19 giờ
+
+TỔNG CỘNG RUSH MODE (Với Cursor): ~60 giờ ≈ 7.5 ngày làm việc
+
+Timeline RUSH MODE (với Cursor):
+- Day 1: Analysis & Design (11 giờ)
+- Day 2-3: Core Components (24 giờ)
+- Day 4: Integration (13 giờ)
+- Day 5: Testing (12 giờ)
+- Day 6: Bug fixes & Release (10 giờ)
+
+Tổng: ~6-7 ngày làm việc (1.5 tuần) với Cursor
+
+Lưu ý RUSH MODE:
+- ✅ Core functionality đầy đủ (offline storage + auto-sync)
+- ✅ Basic testing đảm bảo critical paths hoạt động
+- ❌ Không có UI components (user không thấy queue screen)
+- ❌ Không có backup/recovery mechanism
+- ❌ Testing không comprehensive (có thể miss edge cases)
+- ⚠️ Có thể cần hotfix sau release nếu phát hiện issues
+- ⚠️ Recommend: Làm UI components và comprehensive testing trong phase tiếp theo
+
+
+4. TÓM TẮT CÁC VIỆC PHẢI LÀM (RUSH MODE)
+───────────────────────────────────────────────────────────────
+
+A. PHẦN APP (Flutter - Sources\bm-app) - RUSH MODE
+   
+   ✅ CẦN LÀM:
+   
+   1. Tạo OfflineInspectionQueue (Mới)
+      - File: `lib/offline/offline_inspection_queue.dart`
+      - Hive-based queue tương tự OfflinePhotoQueue
+      - Lưu inspection data dưới dạng JSON
+      - Track status: queued, syncing, synced, failed
+      - Methods: enqueueInspection, fetchBatch, markSyncing, markSynced, 
+                 bumpRetryOrFail, getCounts, cleanupOldData
+   
+   2. Tạo OfflineInspectionService (Mới)
+      - File: `lib/offline/offline_inspection_service.dart`
+      - Wrapper cho submit logic
+      - Enqueue khi network fail
+      - Basic status tracking
+   
+   3. Mở rộng BackgroundUploader (Modify existing)
+      - File: `lib/offline/background_uploader.dart`
+      - Thêm method syncInspections()
+      - Modify _tick() để sync cả photos và inspections
+      - Basic conflict resolution (server wins)
+   
+   4. Modify Inspection Form (Modify existing)
+      - File: `lib/ui/inspection/view/inspection.dart`
+      - Modify _onSubmit() để enqueue khi fail
+      - File: `lib/ui/inspection/view/sub_inspection.dart`
+      - Tương tự cho sub_inspection
+   
+   5. Storage Management (Basic)
+      - 1 week limit calculation
+      - Auto-cleanup logic (trong OfflineInspectionQueue)
+   
+   ❌ BỎ (RUSH MODE):
+   
+   - LocalDataStore (backup & recovery) - Optional, làm sau
+   - UI Components (OfflineIndicator, OfflineQueueScreen, StorageWarning) - Optional, làm sau
+
+B. PHẦN BACKEND (Node.js - Sources\bm-backend)
+   
+   ✅ KHÔNG CẦN THAY ĐỔI BACKEND
+   
+   Lý do:
+   - Backend API đã có sẵn và hoạt động tốt
+   - Endpoints hiện tại đã support:
+     * POST `/v2/work/report/item/result/register`
+     * PUT `/v2/work/report/item/result/modify`
+   - Backend xử lý idempotent (update nếu đã có, create nếu chưa có)
+   - Không cần batch upload endpoint mới
+   - Không cần conflict detection endpoint (có thể handle ở client)
+   
+   Lưu ý:
+   - Cần test với backend team về behavior khi submit duplicate
+   - Có thể cần thêm logging để track offline syncs
+
+C. TESTING & VALIDATION (RUSH MODE - Tối thiểu)
+   
+   ✅ CẦN LÀM:
+   
+   1. Unit Tests (Basic)
+      - OfflineInspectionQueue core operations
+      - OfflineInspectionService basic logic
+   
+   2. Integration Tests (Critical flows)
+      - Submit → Fail → Enqueue → Sync flow
+      - Basic sync với network on/off
+   
+   3. Manual Tests (Essential scenarios)
+      - Airplane mode testing
+      - Basic offline → online sync
+   
+   ❌ BỎ (RUSH MODE):
+   
+   - Comprehensive unit tests (storage management, conflict resolution chi tiết)
+   - Edge cases testing (concurrent syncs, large data, network flapping, app update)
+   - Performance testing
+   - Storage full scenario testing
+
+D. DOCUMENTATION
+   
+   1. Code comments (English)
+   2. Architecture diagram
+   3. User guide (nếu có UI changes)
+   4. Developer guide (cho maintenance)
+
+
+═══════════════════════════════════════════════════════════════
+PHÂN TÍCH SOURCE CODE HIỆN TẠI
+═══════════════════════════════════════════════════════════════
+
+1. OFFLINE PHOTO FUNCTIONALITY (Đã có)
+───────────────────────────────────────────────────────────────
+
+Location: `lib/offline/`
+
+Files:
+- `offline_photo_queue.dart`: Hive-based queue cho photos
+  * Status: queued, uploading, failed, uploaded
+  * Methods: enqueueFiles, fetchBatch, markUploading, markUploaded, bumpRetryOrFail
+  
+- `local_photo_store.dart`: Lưu ảnh vào Documents/SBM/YYYY-MM-DD/
+  * Save bytes với dated folder structure
+  
+- `background_uploader.dart`: Auto-sync khi có mạng
+  * Listen connectivity changes
+  * Batch upload (limit 5)
+  * Retry mechanism với exponential backoff
+  
+- `signed_url_service.dart`: Request signed URLs và upload to S3
+  * Reuse existing backend flow
+
+Integration:
+- `lib/reusable/widgets/global_widget.dart`: 
+  * Khi NetworkTimeoutException → enqueue photos to queue
+  * Line 27: import 'package:pim_app/offline/offline_photo_queue.dart'
+
+Status: ✅ Đã implement và hoạt động (theo docs/progress_offline_first_implementation.md)
+
+2. INSPECTION DATA SUBMISSION (Hiện tại)
+───────────────────────────────────────────────────────────────
+
+Location: `lib/ui/inspection/view/inspection.dart`
+
+Flow hiện tại:
+1. User nhập dữ liệu vào form (inspection values, comments, images)
+2. User click Submit
+3. `_onSubmit()` được gọi (line 1100)
+4. Tạo requestParams với:
+   - item_id, inspection_area_id
+   - result (O/X/~)
+   - image, selected_image (URLs)
+   - result_text (comment)
+   - value (inspection values JSON)
+   - image_captions
+   - inspectionTime
+5. Gọi API:
+   - POST `/v2/work/report/item/result/register` (nếu status == "점검시작")
+   - PUT `/v2/work/report/item/result/modify` (nếu đã có data)
+6. Xử lý lỗi:
+   - SocketException → submitFail()
+   - NetworkTimeoutException → submitFail()
+   - submitFail() chỉ cache ảnh (CachedImgService), KHÔNG lưu inspection data
+
+Vấn đề:
+❌ Khi mất mạng, inspection data (text, values) bị mất
+❌ Chỉ có ảnh được cache, nhưng không có context (item_id, values, etc.)
+❌ User phải nhập lại toàn bộ dữ liệu
+
+3. STORAGE & DATABASE
+───────────────────────────────────────────────────────────────
+
+Hiện có:
+- Hive: Đã dùng cho cached images và offline photo queue
+- sqflite: Có trong dependencies nhưng chưa thấy sử dụng
+- SharedPreferences: Có trong dependencies
+- path_provider: Có trong dependencies
+
+Có thể dùng:
+- Hive: Phù hợp cho queue management (đã có pattern)
+- SQLite (sqflite): Phù hợp cho structured inspection data
+- File system: Đã dùng cho photos, có thể dùng cho JSON backup
+
+4. NETWORK DETECTION
+───────────────────────────────────────────────────────────────
+
+Hiện có:
+- connectivity_plus: ^5.0.2 (đã có)
+- Đã dùng trong BackgroundUploader để listen connectivity changes
+
+Có thể tái sử dụng pattern này.
+
+
+═══════════════════════════════════════════════════════════════
+PHÂN TÍCH BACKEND (Sources\bm-backend)
+═══════════════════════════════════════════════════════════════
+
+1. BACKEND ARCHITECTURE
+───────────────────────────────────────────────────────────────
+
+Technology Stack:
+- Node.js + Express
+- MySQL (Sequelize ORM)
+- AWS S3 (cho image storage)
+- JWT authentication
+
+Location: `Sources\bm-backend`
+
+2. INSPECTION RESULT API ENDPOINTS
+───────────────────────────────────────────────────────────────
+
+A. Register Inspection Result
+   Endpoint: POST `/v2/work/report/item/result/register`
+   Location: `routes/v2.work.js` (line 72)
+   Controller: `controllers/v2.work.controller.js::regItemResult` (line 1464)
+   
+   Request Body:
+   - item_id (number): ID của inspection item
+   - result (string): Kết quả kiểm tra (O/X/~)
+   - image (array): Danh sách URLs ảnh
+   - selected_image (array): Danh sách URLs ảnh đã chọn
+   - result_text (string): Comment/note
+   - value (array): Inspection values JSON
+   - image_captions (array, optional): Captions cho ảnh
+   - inspectionTime (string, optional): Thời gian kiểm tra (ISO8601)
+   
+   Backend Logic:
+   1. Validate data types
+   2. Update NewItem table với result, image, selected_image, result_text
+   3. Update ItemValue table với các giá trị measurement
+   4. Update NewReport status → 'in-progress'
+   5. Update NewInspectionArea status → 'in-progress'
+   6. Calculate final result cho report (O/X/-)
+   7. Create inspection log
+   8. Return 200 success hoặc 400 error
+   
+   Response:
+   - statusCode: 200 (success) hoặc 400 (error)
+   - message: Success/error message
+   
+   Notes:
+   - Backend sử dụng UPDATE thay vì INSERT (idempotent behavior)
+   - Nếu item_id đã có data → update
+   - Không có conflict detection built-in
+   - Image URLs được lưu dưới dạng JSON string
+
+B. Modify Inspection Result
+   Endpoint: PUT `/v2/work/report/item/result/modify`
+   Location: `routes/v2.work.js` (line 90)
+   Controller: `controllers/v2.work.controller.js::modItemResult` (line 2142)
+   
+   Request Body:
+   - item_id (number)
+   - result (string)
+   - image (array)
+   - selected_image (array)
+   - result_text (string)
+   - reason (string): Lý do sửa đổi
+   - value (array)
+   - image_captions (array, optional)
+   - inspectionTime (string, optional)
+   
+   Backend Logic:
+   - Tương tự regItemResult nhưng có thêm field "reason"
+   - Update existing data
+   - Create log với action "수정" (modify)
+   
+   Response:
+   - statusCode: 200 (success) hoặc 400 (error)
+   - message: Success/error message
+
+3. IMAGE UPLOAD API
+───────────────────────────────────────────────────────────────
+
+Endpoint: POST `/v2/work/image-upload`
+Location: `routes/v2.work.js` (line 115)
+Handler: `utils/s3_image.js::uploadPresigned`
+
+Flow:
+1. Client gửi array of file names
+2. Backend generate presigned URLs cho từng file
+3. Client upload trực tiếp lên S3 sử dụng presigned URLs
+4. Presigned URLs expire sau 2 phút (120 seconds)
+
+Implementation:
+- Sử dụng AWS SDK v3 (@aws-sdk/client-s3, @aws-sdk/s3-request-presigner)
+- Presigned URLs cho PUT operation
+- Object key format: `test/{fileName}_{timestamp}.{extension}`
+
+Notes:
+- ✅ Đã support batch (array of files)
+- ✅ Presigned URLs giúp client upload trực tiếp lên S3
+- ✅ Không cần backend thay đổi cho offline sync
+
+4. BACKEND BEHAVIOR ANALYSIS
+───────────────────────────────────────────────────────────────
+
+A. Idempotency
+   ✅ Backend có idempotent behavior
+   
+   - regItemResult: Sử dụng UPDATE (line 1501)
+     ```javascript
+     await NewItem.update(updateData, { where: { id: item_id } })
+     ```
+   - Nếu submit lại cùng item_id → update lại data
+   - Không có duplicate detection
+   - Không có conflict error
+   
+   Implications:
+   - ✅ Có thể retry nhiều lần mà không lo duplicate
+   - ✅ Offline sync có thể gửi lại request mà không cần lo conflict
+   - ⚠️ Cần cẩn thận: nếu user submit online sau khi offline → data mới hơn sẽ overwrite
+
+B. Error Handling
+   - Backend trả về statusCode: 200 (success) hoặc 400 (error)
+   - Không có statusCode 409 (Conflict)
+   - Error messages bằng tiếng Hàn
+   
+   Error Cases:
+   - 400: Data type error, validation error, permission error
+   - Không có conflict detection
+   
+   Implications:
+   - Client cần tự handle conflict (nếu cần)
+   - Có thể dùng timestamp để detect conflicts
+   - Simple approach: Server wins (last write wins)
+
+C. Data Validation
+   - Backend validate data types (item_id, result, image, etc.)
+   - Validate permissions (checkEditAll middleware)
+   - Validate worker authorization
+   
+   Validation Points:
+   - Type checking (line 1469-1485)
+   - Permission check (checkEditAll middleware)
+   - Worker authorization (workerAuthorizationItem)
+
+D. Database Operations
+   - Sử dụng Sequelize ORM
+   - Transactions: Không thấy explicit transaction
+   - Updates: Individual updates cho từng table
+   
+   Tables involved:
+   - NewItem: Lưu inspection result
+   - ItemValue: Lưu measurement values
+   - NewReport: Update status và final result
+   - NewInspectionArea: Update status
+   - InspectionLog: Create log entry
+
+5. BACKEND COMPATIBILITY VỚI OFFLINE SYNC
+───────────────────────────────────────────────────────────────
+
+✅ HOÀN TOÀN TƯƠNG THÍCH
+
+Lý do:
+- Endpoints đã có sẵn và hoạt động tốt
+- Idempotent behavior → có thể retry
+- Không cần batch endpoint (có thể gửi từng request)
+- Không cần conflict detection endpoint
+- Presigned URLs đã support batch
+
+Không cần thay đổi:
+- ✅ Không cần tạo batch upload endpoint
+- ✅ Không cần conflict detection API
+- ✅ Không cần idempotency key
+- ✅ Không cần thay đổi database schema
+
+Cần lưu ý:
+- ⚠️ Backend không có built-in conflict detection
+- ⚠️ Client cần tự handle nếu muốn conflict resolution
+- ⚠️ Cần test với backend team về behavior khi submit duplicate
+
+6. BACKEND PERFORMANCE CONSIDERATIONS
+───────────────────────────────────────────────────────────────
+
+A. Request Rate
+   - Backend có thể handle multiple requests
+   - Không có rate limiting visible
+   - Có thể gửi sequential requests khi sync
+   
+B. Database Load
+   - Mỗi inspection result update nhiều tables
+   - Không có batch update
+   - Có thể tối ưu nếu cần (future)
+
+C. S3 Upload
+   - Presigned URLs expire sau 2 phút
+   - Client upload trực tiếp → không load backend
+   - ✅ Phù hợp cho offline sync
+
+7. BACKEND LOGGING & MONITORING
+───────────────────────────────────────────────────────────────
+
+Current:
+- Console logging với newTime()
+- Log success/failure
+- Log errors với stack trace
+
+For Offline Sync:
+- Có thể thêm log để track offline syncs
+- Có thể thêm field để identify offline submissions
+- Không bắt buộc, nhưng hữu ích cho debugging
+
+
+═══════════════════════════════════════════════════════════════
+PHÂN TÍCH FEASIBILITY CHI TIẾT
+═══════════════════════════════════════════════════════════════
+
+1. CÓ THỂ MỞ RỘNG OFFLINE PHOTO QUEUE KHÔNG?
+───────────────────────────────────────────────────────────────
+
+✅ CÓ THỂ
+
+Lý do:
+- Pattern đã có sẵn và hoạt động tốt
+- Có thể tạo generic OfflineQueue<T> hoặc tạo riêng OfflineInspectionQueue
+- Hive có thể lưu Map<String, dynamic> dễ dàng
+- Có thể reuse BackgroundUploader pattern
+
+Cách làm:
+- Tạo OfflineInspectionQueue tương tự OfflinePhotoQueue
+- Lưu inspection data dưới dạng JSON trong Hive box
+- Extend BackgroundUploader để handle cả photos và inspections
+
+2. CÓ THỂ LƯU INSPECTION DATA OFFLINE KHÔNG?
+───────────────────────────────────────────────────────────────
+
+✅ CÓ THỂ
+
+Lý do:
+- Inspection data là JSON (Map<String, dynamic>)
+- Có thể serialize/deserialize dễ dàng
+- Hive hoặc SQLite đều có thể lưu
+
+Cách làm:
+- Khi submit fail → serialize requestParams thành JSON
+- Lưu vào Hive box hoặc SQLite table
+- Khi có mạng → deserialize và submit lại
+
+3. CÓ THỂ XỬ LÝ CONFLICT KHÔNG?
+───────────────────────────────────────────────────────────────
+
+✅ CÓ THỂ (với một số hạn chế)
+
+Lý do:
+- Backend có thể trả về conflict status
+- Có thể dùng timestamp để quyết định
+- Có thể merge một số fields
+
+Cách làm:
+- Khi sync, check timestamp trên server
+- Nếu server data mới hơn → conflict
+- Có thể:
+  * Overwrite với server data (simple)
+  * Merge (phức tạp hơn, cần business logic)
+  * Prompt user (best UX nhưng cần UI)
+
+4. CÓ THỂ QUẢN LÝ STORAGE LIMIT (1 TUẦN) KHÔNG?
+───────────────────────────────────────────────────────────────
+
+✅ CÓ THỂ
+
+Lý do:
+- Có thể tính toán dung lượng dựa trên:
+  * Số lượng inspections
+  * Kích thước JSON
+  * Số lượng ảnh
+- Có thể implement auto-cleanup
+
+Cách làm:
+- Track createdAt cho mỗi record
+- Tính tổng dung lượng
+- Nếu > 1 tuần hoặc > limit → xóa dữ liệu cũ nhất
+- Cảnh báo user khi gần đầy
+
+5. CÓ THỂ TÍCH HỢP VÀO CODEBASE HIỆN TẠI KHÔNG?
+───────────────────────────────────────────────────────────────
+
+✅ CÓ THỂ (với minimal changes)
+
+Lý do:
+- Pattern đã có sẵn
+- Có thể reuse existing code
+- Minimal changes vào existing flow
+
+Cách làm:
+- Tạo service layer mới (OfflineInspectionService)
+- Wrap existing submit logic
+- Khi submit fail → enqueue thay vì chỉ cache ảnh
+- Background sync tự động xử lý
+
+Thay đổi tối thiểu:
+- Modify `inspection.dart::_onSubmit()` để enqueue khi fail
+- Tạo OfflineInspectionQueue (tương tự OfflinePhotoQueue)
+- Extend BackgroundUploader để handle inspections
+- Thêm UI indicators (optional)
+
+
+═══════════════════════════════════════════════════════════════
+ĐỀ XUẤT IMPLEMENTATION
+═══════════════════════════════════════════════════════════════
+
+1. KIẾN TRÚC ĐỀ XUẤT
+───────────────────────────────────────────────────────────────
+
+┌─────────────────────────────────────────────────────────────┐
+│                    UI Layer                                 │
+│  (inspection.dart, sub_inspection.dart)                     │
+└──────────────────────┬──────────────────────────────────────┘
+                       │
+                       ▼
+┌─────────────────────────────────────────────────────────────┐
+│              OfflineInspectionService                        │
+│  - submitInspection()                                        │
+│  - enqueueOnFailure()                                        │
+│  - getPendingCount()                                         │
+└──────────────────────┬──────────────────────────────────────┘
+                       │
+        ┌──────────────┴──────────────┐
+        ▼                             ▼
+┌───────────────────┐      ┌───────────────────┐
+│ OfflineInspection │      │  LocalDataStore   │
+│      Queue        │      │  (JSON backup)    │
+│  (Hive-based)     │      │  (File system)    │
+└───────────────────┘      └───────────────────┘
+        │
+        ▼
+┌─────────────────────────────────────────────────────────────┐
+│         Extended BackgroundUploader                          │
+│  - Sync photos (existing)                                    │
+│  - Sync inspections (new)                                    │
+│  - Conflict resolution                                       │
+└──────────────────────┬──────────────────────────────────────┘
+                       │
+                       ▼
+┌─────────────────────────────────────────────────────────────┐
+│              Backend API                                     │
+│  - /v2/work/report/item/result/register                     │
+│  - /v2/work/report/item/result/modify                       │
+└─────────────────────────────────────────────────────────────┘
+
+2. COMPONENTS CẦN TẠO/MỞ RỘNG
+───────────────────────────────────────────────────────────────
+
+A. OfflineInspectionQueue (Mới)
+   Location: `lib/offline/offline_inspection_queue.dart`
+   
+   Responsibilities:
+   - Enqueue inspection data khi submit fail
+   - Track status: queued, syncing, synced, failed
+   - Store: item_id, inspection_area_id, requestParams (JSON), createdAt, retries
+   
+   Methods:
+   - enqueueInspection(Map<String, dynamic> requestParams)
+   - fetchBatch({int limit = 5})
+   - markSyncing(dynamic key)
+   - markSynced(dynamic key)
+   - bumpRetryOrFail(dynamic key)
+   - getCounts()
+   - cleanupOldData({int daysToKeep = 7})
+
+B. LocalDataStore (Mới - Optional)
+   Location: `lib/offline/local_data_store.dart`
+   
+   Responsibilities:
+   - Backup inspection data dưới dạng JSON files
+   - Recovery nếu Hive box bị corrupt
+   - Storage management (1 week limit)
+   
+   Methods:
+   - saveInspectionBackup(String inspectionId, Map<String, dynamic> data)
+   - getInspectionBackup(String inspectionId)
+   - cleanupOldBackups({int daysToKeep = 7})
+   - getStorageSize()
+
+C. OfflineInspectionService (Mới)
+   Location: `lib/offline/offline_inspection_service.dart`
+   
+   Responsibilities:
+   - Wrapper cho submit logic
+   - Enqueue khi fail
+   - Provide status to UI
+   
+   Methods:
+   - submitInspection(Map<String, dynamic> requestParams, String endpoint)
+   - getPendingCount()
+   - retryFailed()
+
+D. Extended BackgroundUploader (Mở rộng)
+   Location: `lib/offline/background_uploader.dart` (modify existing)
+   
+   Responsibilities:
+   - Sync cả photos và inspections
+   - Handle conflicts
+   - Batch processing
+   
+   Changes:
+   - Add syncInspections() method
+   - Modify _tick() để sync cả 2 loại
+   - Add conflict resolution logic
+
+E. UI Components (Mới - Optional)
+   Location: `lib/ui/offline/` hoặc `lib/ui/inspection/widget/`
+   
+   Components:
+   - OfflineIndicator: Hiển thị số pending items
+   - OfflineQueueScreen: Màn hình quản lý queue (retry, cancel)
+   - StorageWarning: Cảnh báo khi gần đầy
+
+3. INTEGRATION POINTS
+───────────────────────────────────────────────────────────────
+
+A. Modify `inspection.dart::_onSubmit()`
+   
+   Current:
+   ```dart
+   catch (e) {
+     if (e is NetworkTimeoutException) {
+       submitFail(); // Chỉ cache ảnh
+     }
+   }
+   ```
+   
+   Proposed:
+   ```dart
+   catch (e) {
+     if (e is NetworkTimeoutException) {
+       // Cache ảnh (existing)
+       submitFail();
+       
+       // Enqueue inspection data (new)
+       await OfflineInspectionService.enqueueInspection(
+         requestParams: requestParams,
+         endpoint: status == "점검시작" 
+           ? '/v2/work/report/item/result/register'
+           : '/v2/work/report/item/result/modify',
+       );
+       
+       // Show user feedback
+       global.showToast(fToast, 
+         "오프라인 모드로 저장되었습니다. 네트워크 연결 시 자동으로 업로드됩니다.", 
+         Icons.cloud_off);
+     }
+   }
+   ```
+
+B. Modify `background_uploader.dart::_tick()`
+   
+   Current:
+   ```dart
+   Future<void> _tick() async {
+     // Sync photos only
+     final batch = await OfflinePhotoQueue.fetchBatch(limit: 5);
+     // ... upload photos
+   }
+   ```
+   
+   Proposed:
+   ```dart
+   Future<void> _tick() async {
+     // Sync photos (existing)
+     await _syncPhotos();
+     
+     // Sync inspections (new)
+     await _syncInspections();
+   }
+   
+   Future<void> _syncInspections() async {
+     final batch = await OfflineInspectionQueue.fetchBatch(limit: 3);
+     for (final item in batch) {
+       try {
+         await OfflineInspectionQueue.markSyncing(item['key']);
+         final result = await globalHttp.httpPost(
+           item['endpoint'], 
+           context, 
+           item['requestParams']
+         );
+         if (result["statusCode"] == 200) {
+           await OfflineInspectionQueue.markSynced(item['key']);
+         } else {
+           await OfflineInspectionQueue.bumpRetryOrFail(item['key']);
+         }
+       } catch (e) {
+         await OfflineInspectionQueue.bumpRetryOrFail(item['key']);
+       }
+     }
+   }
+   ```
+
+4. STORAGE MANAGEMENT
+───────────────────────────────────────────────────────────────
+
+A. Tính toán dung lượng:
+   - Mỗi inspection: ~5-10KB JSON
+   - Mỗi ảnh: ~500KB (sau compress)
+   - Giả sử 10 inspections/ngày, 5 ảnh/inspection
+   - Một ngày: ~25MB (JSON) + ~25MB (ảnh) = ~50MB
+   - Một tuần: ~350MB
+
+B. Cleanup strategy:
+   - Track createdAt cho mỗi record
+   - Mỗi lần sync thành công, check records > 7 ngày
+   - Xóa records đã sync > 7 ngày
+   - Cảnh báo khi tổng dung lượng > 300MB
+
+C. Implementation:
+   ```dart
+   Future<void> cleanupOldData({int daysToKeep = 7}) async {
+     final cutoff = DateTime.now().subtract(Duration(days: daysToKeep));
+     final box = await Hive.openBox<Map>('pending-inspections');
+     
+     for (final key in box.keys) {
+       final item = box.get(key) as Map?;
+       if (item == null) continue;
+       
+       final createdAt = DateTime.parse(item['createdAt']);
+       final status = item['status'];
+       
+       // Xóa records đã sync > 7 ngày
+       if (status == 'synced' && createdAt.isBefore(cutoff)) {
+         await box.delete(key);
+       }
+     }
+   }
+   ```
+
+5. CONFLICT RESOLUTION
+───────────────────────────────────────────────────────────────
+
+Strategy: Server wins (simple approach)
+
+Khi sync:
+1. Gửi request với data offline
+2. Nếu server trả về 409 Conflict hoặc "already exists":
+   - Mark as conflict
+   - Có thể:
+     a) Skip (đơn giản nhất)
+     b) Prompt user (best UX)
+     c) Merge (phức tạp)
+
+Implementation (simple):
+```dart
+if (result["statusCode"] == 409 || result["message"]?.contains("already") == true) {
+  // Conflict detected
+  await OfflineInspectionQueue.markConflict(item['key']);
+  // Skip this item, move to next
+  continue;
+}
+```
+
+Advanced (future):
+- Compare timestamps
+- Merge strategy cho từng field
+- UI để user quyết định
+
+
+═══════════════════════════════════════════════════════════════
+RISKS & MITIGATION
+═══════════════════════════════════════════════════════════════
+
+1. RISKS
+───────────────────────────────────────────────────────────────
+
+A. Data Loss
+   Risk: Dữ liệu bị mất nếu Hive box corrupt hoặc app bị kill
+   Mitigation:
+   - Backup JSON files (LocalDataStore)
+   - Periodic sync check
+   - Recovery mechanism
+
+B. Storage Overflow
+   Risk: Vượt quá 1 tuần limit, app crash
+   Mitigation:
+   - Monitor storage size
+   - Auto-cleanup
+   - Warning to user
+
+C. Sync Conflicts
+   Risk: Data conflict khi sync, mất dữ liệu
+   Mitigation:
+   - Server wins strategy (simple)
+   - Log conflicts for review
+   - Future: merge strategy
+
+D. Performance Impact
+   Risk: Sync làm chậm app
+   Mitigation:
+   - Background sync only
+   - Batch processing
+   - Rate limiting
+
+E. Backend Compatibility
+   Risk: Backend không support batch upload hoặc conflict handling
+   Mitigation:
+   - ✅ Backend đã tương thích (không cần thay đổi)
+   - ✅ Idempotent behavior → có thể retry
+   - ✅ Presigned URLs đã support batch
+   - Test với backend team về duplicate submission behavior
+
+2. TESTING STRATEGY
+───────────────────────────────────────────────────────────────
+
+A. Unit Tests:
+   - OfflineInspectionQueue operations
+   - Storage management
+   - Conflict resolution logic
+
+B. Integration Tests:
+   - Submit → Fail → Enqueue → Sync flow
+   - Multiple inspections offline
+   - Storage limit handling
+
+C. Manual Tests:
+   - Airplane mode testing
+   - Deep underground simulation (weak signal)
+   - App kill during sync
+   - Storage full scenario
+
+D. Edge Cases:
+   - Concurrent syncs
+   - Large inspection data
+   - Network flapping (on/off repeatedly)
+   - App update during offline period
+
+
+═══════════════════════════════════════════════════════════════
+KẾT LUẬN
+═══════════════════════════════════════════════════════════════
+
+1. FEASIBILITY: ✅ CÓ THỂ LÀM ĐƯỢC
+───────────────────────────────────────────────────────────────
+
+- Foundation đã có sẵn (offline photo queue)
+- Pattern có thể tái sử dụng
+- Minimal changes vào codebase hiện tại
+- Backend API đã có sẵn
+
+2. EFFORT: RUSH MODE (7.5 ngày với Cursor, 10 ngày không có Cursor)
+───────────────────────────────────────────────────────────────
+
+- RUSH MODE: Chỉ làm core features, bỏ UI components và comprehensive testing
+- Phần lớn thời gian ở coding (37 giờ với Cursor) và basic testing (12 giờ)
+- Cursor giảm 30-40% coding time và 10-15% testing time
+- Timeline RUSH: 1.5 tuần (với Cursor) hoặc 2 tuần (không có Cursor)
+- Trade-off: Nhanh nhưng thiếu UI/UX và testing không đầy đủ
+
+3. RECOMMENDATION
+───────────────────────────────────────────────────────────────
+
+✅ NÊN LÀM
+
+Lý do:
+- Giải quyết vấn đề thực tế (deep underground areas)
+- Cải thiện UX đáng kể
+- Foundation đã có, chỉ cần mở rộng
+- Timeline khả thi
+
+Approach RUSH MODE (1 phase - Core only):
+- OfflineInspectionQueue (tương tự OfflinePhotoQueue)
+- OfflineInspectionService (wrapper cho submit)
+- BackgroundUploader extension (sync inspections)
+- Integration vào inspection forms (2 files)
+- Basic storage management (1 week limit)
+- Basic conflict resolution (server wins)
+- Basic testing (critical paths only)
+
+Timeline: 6-7 ngày làm việc (với Cursor) ≈ 1.5 tuần
+
+Future Enhancements (có thể làm sau):
+- UI Components (OfflineIndicator, QueueScreen, StorageWarning): ~16 giờ
+- LocalDataStore (backup & recovery): ~7 giờ
+- Comprehensive testing (edge cases): ~34 giờ
+- Performance optimization: ~8 giờ
+
+4. NEXT STEPS
+───────────────────────────────────────────────────────────────
+
+1. Review phân tích này với team
+2. Confirm với backend về conflict handling
+3. Design chi tiết database schema
+4. Bắt đầu implementation với Cursor hỗ trợ
+5. Test thường xuyên trong quá trình development
+
+
+═══════════════════════════════════════════════════════════════
+END OF DOCUMENT
+═══════════════════════════════════════════════════════════════
+

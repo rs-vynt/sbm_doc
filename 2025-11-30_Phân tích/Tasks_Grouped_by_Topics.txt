@@ -1,0 +1,381 @@
+═══════════════════════════════════════════════════════════════
+TASKS GROUPED BY TOPICS
+═══════════════════════════════════════════════════════════════
+
+Document: 2025-11-29-released for_VT RnD team (English)
+Grouped Date: 2025-11-30
+Total Original Items: 23
+
+
+═══════════════════════════════════════════════════════════════
+TOPIC 1: OFFLINE FUNCTIONALITY
+═══════════════════════════════════════════════════════════════
+
+Description: This feature allows BM/SBM to record and save data even in locations 
+            without a network connection. This feature allows the mobile app to 
+            capture photos and text that can be accessed offline. In other words, 
+            when the network becomes available, any data that was previously 
+            unavailable can be uploaded immediately.
+
+Timeline: Maximum 1 Week
+
+───────────────────────────────────────────────────────────────
+
+TASK 6: Deep Underground Areas - Network Unavailable
+───────────────────────────────────────────────────────────────
+Issue: Resolving the use of BM/SBM in deep underground areas where the network 
+       is unavailable
+
+Requirements:
+- Record and save data even in locations without a network connection
+- Mobile app to capture photos and text that can be accessed offline
+- When network becomes available, upload previously unavailable data immediately
+- Maximum storage: 1 Week of data
+
+Reference: Refer to the file in the solution
+Alternative: Propose a better solution and resolve it (e.g., refer to the Dongsan Board)
+
+Technical Notes:
+- Offline queue implementation
+- Auto-sync when network available
+- Data integrity and conflict resolution
+
+
+═══════════════════════════════════════════════════════════════
+TOPIC 2: ADMIN ENHANCEMENTS (Baedal Minjok Style)
+═══════════════════════════════════════════════════════════════
+
+Description: Added detailed, comprehensive admin features. This allows for the 
+            expansion of multiple dealerships in a separate format (like a delivery app). 
+            Revenue distribution can also be adjusted. (Details will be discussed separately.)
+
+Timeline: Maximum 1 Week
+
+───────────────────────────────────────────────────────────────
+
+TASK 9: Worker Information Management
+───────────────────────────────────────────────────────────────
+Requirements:
+- Enter the ID and user phone number in the worker information management
+- Enter the phone number and user name in the excess
+- When the platform is the same, let's make it usable
+
+Free User Restrictions:
+- Free users should not be able to print everything on the web
+- OR the printed paper should be printed with "Free User Sample" in gray letters
+
+Policy:
+- App is free
+- Web printing requires payment
+
+───────────────────────────────────────────────────────────────
+
+TASK 14: Admin Enhancements - Baedal Minjok Style
+───────────────────────────────────────────────────────────────
+Requirements:
+- Free users should be automatically sorted and a message sent the day before each day
+- Payments should also be automatically generated and emailed five days before
+- Regional agency setup
+- Three-digit number of agencies
+- Agency-style administration (as you've already figured out)
+
+───────────────────────────────────────────────────────────────
+
+TASK 20: Pop-up Management
+───────────────────────────────────────────────────────────────
+Requirement: How to edit and delete or change pop-ups at https://bluementor.lsmk.kr
+Note: Please let me know
+
+───────────────────────────────────────────────────────────────
+
+TASK 21: Admin Mode (Recommend a good solution, preferably a delivery app)
+───────────────────────────────────────────────────────────────
+
+A. Employee Management
+   - Function to add and subtract from the number of employees
+   - Remove previously registered employees who left the company
+
+B. Employee Information Management
+   - For each company's employee information management, the ID and phone number 
+     (if the phone number is incorrect, the system will not work) must match to use 
+     the paid/free service
+   - If the user's new phone number is updated, the system will continue with the new number
+
+C. Monthly Employee Count/Payment
+   - Monthly employee count/payment from the start date to the end of each month
+   - If 30 days are not enough, the first month will be calculated based on the number of days
+   - Payment function - End of each month
+
+D. User Price Adjustment Function
+   - Required for email invoices
+   - Five days before the end of each month, a bill is automatically generated and sent to:
+     * Registered email address
+     * Social media
+     * Company's main phone number
+
+E. Free Period Notification & Conversion
+   - Notification one day prior to the end of the free period (a separate message will be sent)
+   - Subsequently, a paid conversion function – individual or all numbers assigned to each company
+
+F. Company Inspection Building Information
+   - Information on each company's inspection building
+   - Function to collect all inspection databases for that company
+   - Assignment to a dealership, attribution function, or sole ownership
+
+G. Payment Failure Handling
+   - Immediate access blocking when an inspection company fails to pay
+
+H. Free User Restrictions
+   - Web printing restrictions and DB touch functionality for free users
+
+I. Inspector Registration by Dealership
+   - Operation will begin after inspectors are registered by dealership (1, 2, 3, 4, 5, etc.)
+   - Settlement system established
+
+J. Operation Status by Dealership
+   - Operation status by dealership
+
+K. Operation Based on Worker Phone Numbers
+   - Operation will be based on individual worker phone numbers
+
+L. Free Version Watermark
+   - Free (app)/(web) versions will print the text "(sample)" as a watermark when printing
+
+M. Paid Service Watermark Removal
+   - Paid services will remove the watermark when printing from the web
+   - In other words, paid services will remove the "(sample)" text when printing
+   - This content can be directly designated as paid/free/unprintable in LSMK admin mode
+
+N. Monthly Worker Count
+   - Monthly number of workers per company/agency
+
+O. Free/Paid User Distinction & Notification
+   - Free/paid user distinction and notification function by subscriber phone number
+   - Sort notification content so the administrator can send it in bulk
+
+
+═══════════════════════════════════════════════════════════════
+TOPIC 3: FORMULA/GRAPH & MISSING FEATURES
+═══════════════════════════════════════════════════════════════
+
+Description: Insert a formula and have it been graphed. And add a few more things 
+            that were missing in some BM/SBMs.
+
+Timeline: Maximum 1 Week
+
+───────────────────────────────────────────────────────────────
+
+TASK 1: BM/SBM PC (Web) - Quantity Display Issue
+───────────────────────────────────────────────────────────────
+Issue: [When entering total quantity - inspection quantity] only displays tens.
+Status: Resolved / App OK. (Phase 1, insufficient)
+
+Solution:
+A. Increase all digits on the web to three digits
+B. Increase the current 500 number in the app to 999
+
+───────────────────────────────────────────────────────────────
+
+TASK 2: Photography-Related Issues
+───────────────────────────────────────────────────────────────
+Issue: BM is more convenient than SBM
+Requirement: Add a continuous shooting function when taking a single photo. 
+            This allows the image to be saved without pressing the save button.
+Status: Currently, a method to simply and immediately process two clicks in 
+       the editing function has been implemented (phase 1, insufficient).
+
+───────────────────────────────────────────────────────────────
+
+TASK 3: Hot Water Supply Systems
+───────────────────────────────────────────────────────────────
+Requirement: Distinguish the types of hot water supply and hot water supply systems - 
+            separate them as the inspection methods differ.
+Note: After I return to Korea, I will look into this matter in more detail and let you know.
+
+───────────────────────────────────────────────────────────────
+
+TASK 4: Refrigerator Types
+───────────────────────────────────────────────────────────────
+Requirement: Distinguish the types of refrigerators
+Types: There are four types:
+      - Medium-temperature absorption
+      - Direct-fired absorption
+      - Turbo
+      - Screw
+Note: The format remains the same.
+
+───────────────────────────────────────────────────────────────
+
+TASK 5: Boiler Types
+───────────────────────────────────────────────────────────────
+Requirement: Distinguish the types of boilers
+Reference: Explanation based on Korea Electric Test data
+Feature: Automatic multiplication of subcategories
+
+───────────────────────────────────────────────────────────────
+
+TASK 7: Inspection Advice Text Comparison
+───────────────────────────────────────────────────────────────
+Requirement: Compare and confirm the SBM (app/web) inspection advice text and 
+            insert any missing items into each item.
+Status: Phase 1, insufficient; insufficient comparison.
+
+───────────────────────────────────────────────────────────────
+
+TASK 8: Personalized Page Configuration
+───────────────────────────────────────────────────────────────
+Requirement: Verify that the personalized page is configured. 
+           That is, as if it were a user's personal company.
+
+───────────────────────────────────────────────────────────────
+
+TASK 13: Excel to Hangul to PDF Conversion
+───────────────────────────────────────────────────────────────
+Requirement: How about allowing Excel on the web to be saved as Hangul and then 
+            converted to PDF?
+Note: The Hangul version explains how to do this, and Chat will guide you.
+
+───────────────────────────────────────────────────────────────
+
+TASK 18: Construction Sequence (Includes Formula/Graph)
+───────────────────────────────────────────────────────────────
+Requirement: The construction sequence for this step:
+           1. Resolve the building's basement network issue
+           2. Insert equation (FORMULA/GRAPH)
+           3. Re-adjust the admin
+
+Note: This task includes "Insert equation" which relates to formula/graph functionality.
+
+
+═══════════════════════════════════════════════════════════════
+OTHER TASKS (Not in 3 Main Topics)
+═══════════════════════════════════════════════════════════════
+
+These tasks are outside the scope of the 3 main topics and may require separate 
+discussion or planning.
+
+───────────────────────────────────────────────────────────────
+
+TASK 10: Advertisement Space
+───────────────────────────────────────────────────────────────
+Requirement: When using the app, let's create a space where ads can appear 
+            on the front page, and the web as well.
+Category: Monetization & Advertising
+
+───────────────────────────────────────────────────────────────
+
+TASK 11: Complete Separation of BM/SBM Operations
+───────────────────────────────────────────────────────────────
+Question: Complete separation of BM/SBM operations?
+Category: Architecture & System Design
+
+───────────────────────────────────────────────────────────────
+
+TASK 12: Free App, Paid Web Version Policy
+───────────────────────────────────────────────────────────────
+Question: What about a free app, paid web version policy? What are your thoughts?
+Category: Business Policy & Strategy
+
+───────────────────────────────────────────────────────────────
+
+TASK 15: Database Collection Function
+───────────────────────────────────────────────────────────────
+Requirement: Preparation for the introduction of generative AI requires the collection 
+            of a database, so the database collection function must be implemented 
+            at this time.
+Category: Database & Generative AI Preparation
+
+───────────────────────────────────────────────────────────────
+
+TASK 16: Database Tagging & Statistical Analysis
+───────────────────────────────────────────────────────────────
+Requirement: During database collection, each table is tagged with numbers and proper nouns, 
+            so statistical analysis is performed to actively utilize these tags.
+
+Collection Criteria:
+- By region
+- By inspection company
+- By building name
+- By equipment name
+- By inspection results
+- By machine manufacturer
+- etc.
+
+Purpose: So that it can be later generated using generative AI.
+Category: Database & Generative AI Preparation
+
+───────────────────────────────────────────────────────────────
+
+TASK 17: Database Storage
+───────────────────────────────────────────────────────────────
+Requirement: The database should be stored in AWS's own server, collecting all inspection data.
+Category: Database & Generative AI Preparation
+
+───────────────────────────────────────────────────────────────
+
+TASK 19: November 3rd Incident Process
+───────────────────────────────────────────────────────────────
+Requirement: Please provide detailed instructions for the process for the incident 
+            on November 3rd, and what to do if this happens again.
+Note: Please provide instructions for the process.
+Category: Incident Management & Documentation
+
+───────────────────────────────────────────────────────────────
+
+TASK 22: Service Crashing Issue
+───────────────────────────────────────────────────────────────
+Issue: Service crashing every three months
+Question: How do you resolve the issue of the service crashing every three months? 
+         Please tell me.
+Category: Technical Issue & Stability
+
+───────────────────────────────────────────────────────────────
+
+TASK 23: Generative AI Introduction
+───────────────────────────────────────────────────────────────
+Note: Generative AI will be introduced later.
+Category: Future Feature
+
+
+═══════════════════════════════════════════════════════════════
+SUMMARY
+═══════════════════════════════════════════════════════════════
+
+TOPIC 1 (Offline Functionality): 1 task
+  - Task 6: Deep Underground Areas - Network Unavailable
+
+TOPIC 2 (Admin Enhancements): 4 tasks
+  - Task 9: Worker Information Management
+  - Task 14: Admin Enhancements - Baedal Minjok Style
+  - Task 20: Pop-up Management
+  - Task 21: Admin Mode (15 sub-items)
+
+TOPIC 3 (Formula/Graph & Missing Features): 9 tasks
+  - Task 1: Quantity Display Issue
+  - Task 2: Photography - Continuous Shooting
+  - Task 3: Hot Water Supply Systems
+  - Task 4: Refrigerator Types
+  - Task 5: Boiler Types
+  - Task 7: Inspection Advice Text Comparison
+  - Task 8: Personalized Page Configuration
+  - Task 13: Excel to Hangul to PDF Conversion
+  - Task 18: Construction Sequence (includes formula/graph)
+
+OTHER TASKS: 9 tasks
+  - Task 10: Advertisement Space
+  - Task 11: BM/SBM Separation
+  - Task 12: Free/Paid Policy
+  - Task 15-17: Database & AI Preparation
+  - Task 19: Incident Process
+  - Task 22: Service Crashing
+  - Task 23: Generative AI
+
+Total: 23 tasks
+  - In 3 main topics: 14 tasks
+  - Other tasks: 9 tasks
+
+
+═══════════════════════════════════════════════════════════════
+END OF DOCUMENT
+═══════════════════════════════════════════════════════════════
+
